@@ -106,7 +106,7 @@ const init = () => {
   const searchImage = new Image();
   searchImage.src = SMAAEffect.searchImageDataURL;
 
-  const aaEffect = new SMAAEffect(searchImage,areaImage,SMAAPreset.ULTRA);
+  const aaEffect = new SMAAEffect(searchImage,areaImage);
 
 
   aoPass = new EffectPass(camera,aaEffect,ssaoEffect); 
