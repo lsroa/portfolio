@@ -8,23 +8,17 @@ import {
   SSAOEffect,
   NormalPass,
   SMAAEffect,
-  BlurPass,
-  ShaderPass,
-  SMAAPreset
 } from "postprocessing";
 
 import GLTFLoader from "three-gltf-loader";
 import App from "./App.vue";
-import {FXAAShader} from 'three/examples/jsm/shaders/FXAAShader';
 
-//import {TimelineMax as TL}  from "gsap";
 
 import Vue from "vue";
 
 
 new Vue(App).$mount('#app')
 
-//let tl = new TL();
 
 // initialize globals
 let scene, camera, renderer, blurPass, aoPass, ssaoEffect, normalPass, loader, renderPass, composer, clock, mixerUpdateDelta;
