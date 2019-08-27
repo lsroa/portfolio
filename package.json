@@ -1,0 +1,31 @@
+{
+  "name": "lsroa.xyz",
+  "version": "0.0.5",
+  "description": "Lsroa.xyz protfolio website",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html -p 8080",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "has-webgl": "^0.0.1",
+    "postprocessing": "^6.6.0",
+    "three": "^0.102.0",
+    "three-gltf-loader": "1.102.0",
+    "three.js": "^0.77.1",
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.3"
+  },
+  "devDependencies": {
+    "@types/stats.js": "0.17.0",
+    "@types/three": "^0.93.31",
+    "@vue/component-compiler-utils": "^3.0.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "parcel-bundler": "^1.12.3",
+    "pug": "^2.0.4",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "keywords": []
+}

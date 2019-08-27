@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"lsroa.xyz.e31bb0bc.css","sourceRoot":"..","sourcesContent":[".container{\r\n    display: grid;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\n#canvas{\r\n    padding:20px;\r\n    position: fixed;\r\n}"]}
