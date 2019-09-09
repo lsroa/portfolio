@@ -44,7 +44,7 @@ export default function init(vue){
     // Load GLTF model
     loader = new GLTFLoader();
     loader.load("./Designer3.0.glb", gltf => {
-      for(var i =0 ; i< gltf.animations.length;i++){
+      for(let i =0 ; i< gltf.animations.length;i++){
         loadAnimation(gltf.scene,gltf.animations[i])
       }
       scene.add(gltf.scene);

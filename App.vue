@@ -68,12 +68,8 @@ export default {
         }
     },
     mounted(){
-        // init();
         
-        // for (const el in document.getElementsByClassName('cat-bg')){
-        //     console.log(el)
         lax.addElement(document.getElementsByClassName('cat-bg')[0])
-        // }
         
     },
     created(){
@@ -116,7 +112,7 @@ export default {
 }
 
 .gallery-container >div{
-   background: url('./dist/assets/3d.General/1.png') center/cover ;
+   background: url('./assets/3d.General/1.png') center/cover ;
 }
 .cat-content{
     display:grid;
