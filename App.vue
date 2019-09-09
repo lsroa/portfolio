@@ -1,5 +1,5 @@
 <template lang="pug">
-    #app(v-if="!loading")
+    #app(show="!loading")
         .first
             .menu
                 for sec in ['🏢','contact','services','about']
@@ -56,6 +56,8 @@ import "aos/dist/aos.css";
 import init from "./designer.js";
 import Canvas from "./Canvas.vue";
 import Contact from "./Contact.vue";
+
+
 export default {
     components:{
         Canvas,Contact
@@ -67,20 +69,24 @@ export default {
             loading:true
         }
     },
+    
     mounted(){
-        
-        lax.addElement(document.getElementsByClassName('cat-bg')[0])
-        
-    },
-    created(){
 
+            const elements = document.getElementsByClassName("cat-bg")
+            for(let i = 0; i < elements.length;i++){
+                lax.addElement(elements[i])
+            }
+        
+        
+    }, 
+    created(){
         init(this);
         AOS.init();
         lax.setup();
         document.addEventListener('scroll', function(x) {
             lax.update(window.scrollY)
         }, false);
-    },
+    },   
     methods:{
         coordinates(e){
            this.x = (e.clientX - window.innerWidth/2)/window.innerWidth;
