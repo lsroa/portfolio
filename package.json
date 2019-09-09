@@ -4,12 +4,14 @@
   "description": "Lsroa.xyz protfolio website",
   "main": "index.html",
   "scripts": {
-    "start": "parcel index.html -p 8080",
+    "start": "ip addr|grep inet && parcel index.html -p 8080",
     "build": "parcel build index.html"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "babel-plugin-transform-class-properties": "6.24.1",
     "has-webgl": "^0.0.1",
+    "lax.js": "^1.2.3",
     "postprocessing": "^6.6.0",
     "three": "^0.102.0",
     "three-gltf-loader": "1.102.0",
