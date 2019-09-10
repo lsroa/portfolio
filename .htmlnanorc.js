@@ -1,3 +1,4 @@
-{
-    "minifySvg"=false
+
+module.exports = {
+    "minifySvg":false
 }
