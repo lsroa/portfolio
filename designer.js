@@ -48,13 +48,9 @@ export default function init(vue){
         loadAnimation(gltf.scene,gltf.animations[i])
       }
       scene.add(gltf.scene);
-    },e=>{    
-      console.log(e)
-      if(e.total === e.loaded) {
-        console.log("hi")
-        vue.loading = false
-      }   
-    },e=>{
+      vue.loading = false
+
+    },null,e=>{
       console.log(e)
     });
   
