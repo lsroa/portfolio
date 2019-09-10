@@ -1,9 +1,9 @@
 <template lang="pug">
-    Main(v-show="!loading")
-    //- div
-        //- div
-        //-     Main
-        //- div(style="width:100%;margin:auto;margin-top:50vh;font-size:32px") Cargando
+    //- Main(v-if="!loading")
+    div
+        div(v-if="!loading")
+            Main
+        div(v-else,style="width:100%;margin:auto;margin-top:50vh;font-size:32px") Cargando
         
 </template>
 <script>
