@@ -1,6 +1,6 @@
 {
   "name": "lsroa.xyz",
-  "version": "0.0.5",
+  "version": "0.0.85",
   "description": "Lsroa.xyz protfolio website",
   "main": "index.html",
   "scripts": {
@@ -20,7 +20,6 @@
     "vue-hot-reload-api": "^2.3.3"
   },
   "devDependencies": {
-    "@types/stats.js": "0.17.0",
     "@types/three": "^0.93.31",
     "@vue/component-compiler-utils": "^3.0.0",
     "babel-core": "^6.26.3",

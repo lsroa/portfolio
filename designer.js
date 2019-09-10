@@ -49,9 +49,10 @@ export default function init(vue){
       }
       scene.add(gltf.scene);
     },e=>{    
-      if(e.loaded === e.total)  {
-        vue.loading = false;
-      }      
+      if(e.total === e.loaded) {
+        
+        vue.loading = false
+      }   
     },e=>{
       console.log(e)
     });
