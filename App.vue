@@ -1,8 +1,9 @@
 <template lang="pug">
-    div
-        div(v-if="!loading")
-            Main
-        div(v-else="loading") Cargando
+    Main
+    //- div
+        //- div
+        //-     Main
+        //- div(style="width:100%;margin:auto;margin-top:50vh;font-size:32px") Cargando
         
 </template>
 <script>
