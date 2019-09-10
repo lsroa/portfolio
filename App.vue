@@ -1,5 +1,5 @@
 <template lang="pug">
-    Main
+    Main(v-show="!loading")
     //- div
         //- div
         //-     Main
