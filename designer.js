@@ -50,7 +50,7 @@ export default function init(vue){
       scene.add(gltf.scene);
     },e=>{    
       if(e.total === e.loaded) {
-        
+        console.log("hi")
         vue.loading = false
       }   
     },e=>{

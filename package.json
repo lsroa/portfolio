@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "start": "ip addr|grep inet && parcel index.html -p 8080",
-    "build": "parcel build index.html"
+    "build": "NODE_ENV=development parcel build index.html --no-minify"
   },
   "dependencies": {
     "aos": "^2.3.4",

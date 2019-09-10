@@ -2,7 +2,7 @@
     div
         div(v-if="!loading")
             Main
-        div(v-else,style="margin:auto") Cargando
+        div(v-else="loading") Cargando
         
 </template>
 <script>
