@@ -1,9 +1,8 @@
 <template lang="pug">
-    //- Main(v-if="!loading")
-    div
-        div(v-if="!loading")
-            Main
-        div(v-else,style="width:100%;margin:auto;margin-top:50vh;font-size:32px") Cargando
+    transition
+        div(v-if="!loading",key="1")
+            Main           
+        div.loading(v-else,key="2") Cargando
         
 </template>
 <script>
@@ -30,6 +29,29 @@ export default {
 
 
 <style>
+
+.v-enter-active,
+.v-leave-active {
+    transition: opacity .5s
+}
+.v-leave-to,
+.v-enter {
+    opacity:0;
+}
+
+.loading{
+    z-index:10;
+    position:absolute;
+    left:0px;
+    right:0px;
+    background-color:#eee;
+    margin:auto;
+    padding-top:50vh;
+    padding-bottom:50vh;
+    font-size:32px;
+    text-align:center;
+}
+
 
 :root{
     --red:#e74645;
