@@ -1,8 +1,7 @@
 <template lang="pug">
     transition
-        div(v-if="!loading",key="1")
-            Main           
-        div.loading(v-else,key="2") Cargando
+        Main           
+        div.loading(v-if="loading") Cargando
         
 </template>
 <script>
@@ -29,6 +28,8 @@ export default {
 
 
 <style>
+
+
 
 .v-enter-active,
 .v-leave-active {
@@ -57,26 +58,11 @@ export default {
     --red:#e74645;
     --orange:#fb7756;
     --green:#facd60;
-    --yellow:#fdfa66;
+    --yellow:#f5f93a;
     --blue:#1ac0c6;
 }
 
-.gallery-container{
-    display:grid;
-    grid-gap:10px;
-    width:100%;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows:repeat(2,30vh);
-}
 
-.gallery-container >div{
-   background: url('./assets/3d.General/1.png') center/cover ;
-}
-.cat-content{
-    display:grid;
-    width:80%;
-    justify-self:center;
-}
 .btn-container{
     grid-gap:5px;
     padding:5px;
@@ -92,22 +78,11 @@ body{
     font-family:sans-serif;
 
 }
-.second{
-    display:grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-column-start:2;
-    height:100vh;
-    width:100%;
-    justify-items:center;
-    grid-gap:10px;
-    align-items:center;    
-    align-content:center;
-    justify-content:center;
-}
+
 .cat-bg{
     font-size: 490px;
     line-height: 84%;
-    font-family: serif;
+    font-family: 'Abril Fatface',serif;
     z-index: -1;
     color: #E2E1E1;
     text-align: center;
@@ -168,15 +143,10 @@ body{
     grid-gap:20px;
 }
 
-.cat{
-    display: grid;
-    grid-column: 1/-1;
-    position: relative;
-    height: 100vh;    
-    align-content:center;
-    overflow: hidden;
-    
-
+button{
+    background-color:var(--yellow);
+    border:none;
+    color:#272727;
 }
 
 
@@ -187,7 +157,7 @@ body{
 .social{
     display: grid;
     grid-auto-flow: column;
-    justify-items: flex-end;
+    justify-items: center;
 }
 
 .social-item{   

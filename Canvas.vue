@@ -16,10 +16,10 @@
                 <ellipse class="cls-6" cx="122.5" cy="94.5" rx="61" ry="86.5"></ellipse>
             </g>
             <g id="mouth" :transform="'translate('+ move(16,16) +')'">
-                <rect class="cls-1 pp" x="103" y="117" width="39" height="8" rx="4"></rect>
+                <rect class="cls-1 pp" x="103" y="129" width="39" height="8" rx="4"></rect>
             </g>
                 
-            <g id="bear" :transform="'translate('+ move(5,15) +')'">
+            <g id="bear" :transform="'translate('+ move(17,16) +')'">
                 <path class="cls-7" d="M214.9,215c-11,0-9-19-15.5-19s-4.5,19-15.5,19a4,4,0,0,0-4,4c0,5.5,9.75,8.75,19.5,9,9.75-.25,19.5-3.5,19.5-9A4,4,0,0,0,214.9,215Z" transform="translate(-76.9 -60)"></path>
             </g>
             <g id="cap" :transform="'translate('+ move(5,5) +')'">
