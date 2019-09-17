@@ -1,7 +1,8 @@
 <template lang="pug">
     transition
-        Main           
         div.loading(v-if="loading") Cargando
+        Main           
+        
         
 </template>
 <script>
