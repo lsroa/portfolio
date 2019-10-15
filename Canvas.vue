@@ -1,5 +1,5 @@
 <template>
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 245 216">
+        <svg class="follower" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 245 216">
             <defs>    
                 <clipPath id="clip-path" transform="translate(-76.9 -60)">
                     <ellipse class="cls-1" cx="199.4" cy="154.5" rx="61" ry="86.5"></ellipse>

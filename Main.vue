@@ -6,20 +6,29 @@
             rect(x="0",y="230",width="80%",height="30%")
         .first
             .menu
-                for sec in ['🏢','contact','services','about']
-                    .menu-item=sec
+                .menu-item
+                    img(src="./assets/lsr.svg")
+                .menu-item Contact
+                .menu-item services
+                .menu-item about
             .title 
-                div(style="font-size:18px;margin-right:5px") 👓  designer and developer 
-                div(style="font-size:122px;font-family: 'Abril Fatface',serif;") One man army
-                div(style="font-size:48px") where design & development meet
+                div 👓  designer and developer 
+                div One man army
+                div where design & development meet
                 .btn-container
                     button Contact
                     p 
                     button(style="background-color:#eee") View Reel
                 .social
-                    for x in [1,2,3,4]
-                        .social-item 💩  
-                    
+                    a.social-item(href="https://github.com/lsroa") 
+                        p G
+                    a.social-item(href="https://twitter.com/granroa") 
+                        p T  
+                    a.social-item(href="https://behance.net/roa") 
+                        p B
+                    a.social-item(href="https://dribbble.com/lsroa")
+                        p D
+
         .second(data-aos="fade-up")
                 strong(style="font-family: 'Abril Fatface';font-size:48px") What do I solve
                 ol.service
@@ -36,49 +45,51 @@
                         strong Web Apps
                         |  for your business or service
     
-        strong(style="font-size:144;font-family: 'Abril Fatface',serif;line-height:84%;text-align:rigth;grid-column:4") 
+        div.designer 
             | de
             | sig 
             | ner             
         div("@mousemove"="coordinates",style="width:100%;margin:auto;grid-column:1/-1")            
             .cat
-                strong.cat-bg(data-lax-preset="linger") 3d/General
+                strong.cat-bg 3d/General
                 .cat-content
                     p.subt   
                         | this.
                         strong 3d General
                     .gallery-container
-                        .d31(data-aos="fade-up",style="")
+                        .d31(data-aos="fade-up")
                         .d32(data-aos="fade-up")
-                        .d3d(data-aos="fade-up",style="grid-row:span 2;grid-column:3")
+                        .d3d(data-aos="fade-up")
             .cat
-                strong.cat-bg(data-lax-preset="linger") Illustration
+                strong.cat-bg Illustration
                 .cat-content
                     p.subt   
                         | this.
                         strong Illustration
                     .gallery-container
-                        .il2(data-aos="fade-up",stye="grid-column:1;")
-                        .il1(data-aos="fade-up",style="grid-row: span 3")
-                        .il3(data-aos="fade-up",style="grid-column:3;")     
+                        .il2(data-aos="fade-up",data-aos-delay="50")
+                        .il1(data-aos="fade-up",data-aos-delay="100")
+                        .il3(data-aos="fade-up",data-aos-delay="150")
+                        .il4(data-aos="fade-up",data-aos-delay="200")
+                        .il5(data-aos="fade-up",data-aos-delay="250")     
             .cat
-                strong#Animation.cat-bg(data-lax-preset="linger") Animation
+                strong.cat-bg Animation
                 .cat-content
                     p.subt   
                         | this.
                         strong Animation
                     .gallery-container
-                        .an2(data-aos="fade-up",stye="grid-row:span 3")
-                        .an1(data-aos="fade-up",style="grid-column:3;grid-row:span 2;") 
+                        .an2(data-aos="fade-up")
+                        .an1(data-aos="fade-up") 
             .cat
-                strong#Animation.cat-bg(data-lax-preset="linger") Backend Development
+                strong.cat-bg Backend Development
                 .cat-content
                     p.subt   
                         | this.
                         strong Backend and Development
                     .gallery-container
-                        .an2(data-aos="fade-up",stye="grid-column:1;")
-                        .an1(data-aos="fade-up",style="grid-column:3;grid-row:span 2;")                                 
+                        .an2(data-aos="fade-up")
+                        .an1(data-aos="fade-up")                                 
 
             .footer
                 .credits 
@@ -94,6 +105,10 @@
 </template>
 
 <style>
+.menu-item > img{
+    width:10vh;
+}
+
 .second{
     display:grid;
     grid-column-start:2;
@@ -112,7 +127,12 @@
     grid-gap:12px;
     padding:10px;
 }
-
+.designer{
+    font-size:144;
+    font-family: 'Abril Fatface',serif;
+    line-height:84%;
+    grid-column:4/auto;
+}
 ol{
     list-style: none;   
     counter-reset: my-counter;
@@ -141,11 +161,13 @@ a{
 
 .an1{
    background: url('./assets/Animation/1.gif') center/cover ;
+   grid-column:3;
+   grid-row:span 2;
 
 }
 .an2{
    background: url('./assets/Animation/2.gif') center/cover ;
-
+   grid-column:1;
 }
 .d31{
    background: url('./assets/3d.General/1.png') center/cover ;
@@ -153,23 +175,37 @@ a{
 
 .d32{
     background: url('./assets/3d.General/2.jpg') center/cover ;
- 
-
-
 }
 .d3d{
     background: url('./assets/3d.General/3.jpg') center/cover ;
+    grid-row:span 2;
+    grid-column:3
 }
 .il1{
    background: url('./assets/Illustration/1.jpg') center/cover ;
+   grid-row: span 3;
    
 }
 .il2{
    background: url('./assets/Illustration/2.jpeg') center/cover ;
+   grid-column:1;
 }
 .il3{
    background: url('./assets/Illustration/3.jpg') center/cover ;
+   grid-column:3;
 }
+.il4{
+   background: url('./assets/Illustration/4.jpg') center/cover ;
+   grid-column:3
+}
+.il5{
+   background: url('./assets/Illustration/5.jpeg') center/contain ;
+   grid-column:1;
+
+   grid-row: 2/span 2;
+   
+}
+
 
 .subt:before{
     content:"";

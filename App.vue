@@ -1,6 +1,8 @@
 <template lang="pug">
-    transition
-        div.loading(v-if="loading") Cargando
+    div
+        transition
+            div.loading(v-if="loading")
+                video(src="./dist/ast.webm" autoplay loop)
         Main           
         
         
@@ -20,7 +22,10 @@ export default {
         }
     },
     created(){
-       init(this);
+        setTimeout(() => {
+           init(this) 
+        }, 5000);
+        
     }
 }
 
@@ -34,26 +39,29 @@ export default {
 
 .v-enter-active,
 .v-leave-active {
-    transition: opacity .5s
+    transition: all .5s;
 }
 .v-leave-to,
 .v-enter {
-    opacity:0;
+    transform:translateY(-100vh);
 }
 
 .loading{
     z-index:10;
     position:absolute;
+    width:100vw;
+    height:100vh;
     left:0px;
     right:0px;
     background-color:#eee;
     margin:auto;
-    padding-top:50vh;
-    padding-bottom:50vh;
-    font-size:32px;
-    text-align:center;
+    padding-top:25vh;
+    padding-bottom:25vh;
+    text-align:center;    
 }
-
+.loading > video {
+    width:25vh; 
+}
 
 :root{
     --red:#e74645;
@@ -90,6 +98,7 @@ body{
     position: absolute;
     align-self: center;
     justify-self:center;
+    background: rgba(1,1,1,0);
 }
 
 .container{
@@ -199,6 +208,89 @@ button{
     left:0;
     right:0;
     width:100%;
+}
+
+.title > div:nth-child(2){
+    font-size:18vh;
+    font-family: 'Abril Fatface',serif;
+}
+
+.title > div:nth-child(1){
+    font-size:18px;
+    margin-right:5px;
+}
+.title > div:nth-child(3){
+    font-size:48px;
+}
+
+.contact{
+    width: 27vw;
+}
+
+
+@media (max-width:768px){
+    #app{
+        display:grid;
+    }
+    .container{
+        display:none;
+    }
+    .first{
+        grid-column:1/-1;  
+        align-self: center;  
+        align-items:center;
+        justify-content: center;    
+    }
+    .follower{
+        display:none;
+    }
+    .title{
+        text-align:center;
+    }
+    .designer{
+        grid-column: 1/-1;
+        opacity:0;
+    }
+    .second{
+        grid-column: 2/-2;
+        height:45vh;
+    }
+    .gallery-container{
+        grid-template-columns: 1fr;
+    }
+    .credits{
+        display:none;
+    }
+    .footer{
+        grid-template-columns:1fr;
+    }
+    .contact{
+        padding:5vh;
+        align-self:center;
+        width:50%;
+    }
+    .title > div:nth-child(1){
+        font-size:3vh;
+    }
+    .title > div:nth-child(2){
+        font-size:12vh;
+    }
+    .title > div:nth-child(3){
+        font-size:5vh;
+    }
+
+    .gallery-container > *{
+        grid-column:auto;
+        grid-row:auto;
+        width:auto;
+        background-position:center;
+        background-size:contain;
+        background-repeat:no-repeat;
+    }
+
+    .menu > div:nth-child(n+2){
+        display:none;
+    }
 }
 
 </style>
