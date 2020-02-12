@@ -3,8 +3,16 @@
         transition
             div.loading(v-if="loading")
                 video(src="./dist/ast.webm" autoplay loop)
-        Main           
         
+        Main  
+        svg(viewBox="0 0 400 400",style="fill:var(--yellow);right:0;position:absolute;top:0;z-index:-7")
+            ellipse(cx="190",cy="100",rx="80",ry="80")
+            rect(x="320",y="130",width="25",height="25",class="red-fill")
+            rect(x="0",y="230",width="80%",height="30%")
+            rect(x="0",y="360",width="80%",height="10",class="red-fill")
+        .container(v-show="show")
+            #canvas         
+        video.bgd(v-show="!show",src="./dist/designer-no-bg.webm" autoplay loop)
         
 </template>
 <script>
@@ -18,13 +26,15 @@ export default {
     },
     data(){
         return {
-            loading:true
+            loading:true,
+            show:true
         }
     },
-    created(){
-        setTimeout(() => {
+    mounted(){
+        // setTimeout(() => {
            init(this) 
-        }, 5000);
+        //    this.loading = false
+        // }, 5000);
         
     }
 }
@@ -64,11 +74,14 @@ export default {
 }
 
 :root{
-    --red:#e74645;
+    background-color:#f6f6f6;
+    --red:#FF78A8;
+    --redy:#FF78A8;
     --orange:#fb7756;
-    --green:#facd60;
-    --yellow:#f5f93a;
-    --blue:#1ac0c6;
+    --yellow:#00E8FF;
+    --yellow2:#faEa60;
+    --green:#C5F95a;
+    --blue:#3C76C3;
 }
 
 
@@ -93,7 +106,8 @@ body{
     line-height: 84%;
     font-family: 'Abril Fatface',serif;
     z-index: -1;
-    color: #E2E1E1;
+    color: #eee;
+    top:0px;
     text-align: center;
     position: absolute;
     align-self: center;
@@ -104,7 +118,8 @@ body{
 .container{
     display: grid;
     position: relative;
-    z-index: 0;
+    z-index: -3;
+    
     padding: 0;
     margin:auto;
     height: 200vh;
@@ -123,6 +138,7 @@ body{
     grid-column-start: 2;
 
 }
+
 .footer{
     grid-column: 1/-1;
     grid-template-columns: repeat(3,1fr);
@@ -180,8 +196,6 @@ button{
     border-radius: 50%;
     border: 1px solid #272727;
 }
-
-
 #canvas{
     padding:0;
     margin: 0px;
@@ -195,7 +209,7 @@ button{
 #app{
     position: absolute;
 
-    z-index:-2;
+    z-index:0;
     display:grid;
 
     justify-items: center;
@@ -232,6 +246,8 @@ button{
     #app{
         display:grid;
     }
+
+
     .container{
         display:none;
     }

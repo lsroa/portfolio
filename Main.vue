@@ -1,24 +1,23 @@
 <template lang="pug">
     #app
-        svg(viewBox="0 0 400 400",style="fill:var(--yellow);right:0;position:absolute;top:0;z-index:-5")
-            ellipse(cx="190",cy="100",rx="80",ry="80")
-            rect(x="320",y="130",width="25",height="25")
-            rect(x="0",y="230",width="80%",height="30%")
+        
         .first
             .menu
-                .menu-item
-                    img(src="./assets/lsr.svg")
+                .menu-item LSR
                 .menu-item Contact
                 .menu-item services
                 .menu-item about
             .title 
                 div 👓  designer and developer 
-                div One man army
+                div 
+                    span One 
+                    span(style="color:var(--red)") man 
+                    | army
                 div where design & development meet
                 .btn-container
-                    button Contact
+                    button("@click"="toggle",style="border:2px #0c0c0c solid;background-color:#eee") Contact
                     p 
-                    button(style="background-color:#eee") View Reel
+                    button(style="background-color:#0c0c0c;color:#eee") View Reel
                 .social
                     a.social-item(href="https://github.com/lsroa") 
                         p G
@@ -30,7 +29,8 @@
                         p D
 
         .second(data-aos="fade-up")
-                strong(style="font-family: 'Abril Fatface';font-size:48px") What do I solve
+                strong(style="font-family: 'Abril Fatface';font-size:48px") What do 
+                    span(style="color:var(--red)") I solve
                 ol.service
                     li
                         strong  Digital experiences 
@@ -51,46 +51,22 @@
             | ner             
         div("@mousemove"="coordinates",style="width:100%;margin:auto;grid-column:1/-1")            
             .cat
-                strong.cat-bg 3d/General
+                strong.cat-bg 3d Illustration Development UI/UX Animation
                 .cat-content
-                    p.subt   
+                    p.subt 
                         | this.
                         strong 3d General
                     .gallery-container
-                        .d31(data-aos="fade-up")
-                        .d32(data-aos="fade-up")
-                        .d3d(data-aos="fade-up")
-            .cat
-                strong.cat-bg Illustration
-                .cat-content
-                    p.subt   
-                        | this.
-                        strong Illustration
-                    .gallery-container
+                        .d31(data-aos="fade-up",data-aos-delay="160")
+                        .d32(data-aos="fade-up",data-aos-delay="100")
+                        .an2(data-aos="fade-up",data-aos-delay="120")
+                        .d3d(data-aos="fade-up",data-aos-delay="100")
+                        .il4(data-aos="fade-up",data-aos-delay="200")
                         .il2(data-aos="fade-up",data-aos-delay="50")
+                        .an1(data-aos="fade-up") 
                         .il1(data-aos="fade-up",data-aos-delay="100")
                         .il3(data-aos="fade-up",data-aos-delay="150")
-                        .il4(data-aos="fade-up",data-aos-delay="200")
-                        .il5(data-aos="fade-up",data-aos-delay="250")     
-            .cat
-                strong.cat-bg Animation
-                .cat-content
-                    p.subt   
-                        | this.
-                        strong Animation
-                    .gallery-container
-                        .an2(data-aos="fade-up")
-                        .an1(data-aos="fade-up") 
-            .cat
-                strong.cat-bg Backend Development
-                .cat-content
-                    p.subt   
-                        | this.
-                        strong Backend and Development
-                    .gallery-container
-                        .an2(data-aos="fade-up")
-                        .an1(data-aos="fade-up")                                 
-
+                        .il5(data-aos="fade-up",data-aos-delay="250") 
             .footer
                 .credits 
                     strong(style="font-size:22px;color:#ccc") Credits
@@ -102,13 +78,23 @@
                         p Blender
                 Canvas(":x"="x",":y"="y")
                 Contact
+               
+        
+        
+
 </template>
 
 <style>
 .menu-item > img{
     width:10vh;
 }
-
+.bgd{
+    position:absolute;
+    top:0;
+    right:0;
+    height:100vh;
+    z-index:-5;
+}
 .second{
     display:grid;
     grid-column-start:2;
@@ -120,6 +106,12 @@
     align-content:center;
     justify-content:center;
 
+}
+.red-fill{
+    fill: var(--red); 
+}
+.yellow-fill{
+    fill: var(--yellow);
 }
 .service{
     grid-template-columns: repeat(2,1fr);    
@@ -161,13 +153,14 @@ a{
 
 .an1{
    background: url('./assets/Animation/1.gif') center/cover ;
-   grid-column:3;
    grid-row:span 2;
 
 }
 .an2{
    background: url('./assets/Animation/2.gif') center/cover ;
-   grid-column:1;
+   grid-column: span 2;
+   grid-row: span 2;
+
 }
 .d31{
    background: url('./assets/3d.General/1.png') center/cover ;
@@ -177,32 +170,25 @@ a{
     background: url('./assets/3d.General/2.jpg') center/cover ;
 }
 .d3d{
-    background: url('./assets/3d.General/3.jpg') center/cover ;
+    background: url('./assets/3d.General/3.jpg') center/contain ;
     grid-row:span 2;
-    grid-column:3
 }
 .il1{
    background: url('./assets/Illustration/1.jpg') center/cover ;
-   grid-row: span 3;
-   
+   grid-row:span 3;
 }
 .il2{
    background: url('./assets/Illustration/2.jpeg') center/cover ;
-   grid-column:1;
 }
 .il3{
    background: url('./assets/Illustration/3.jpg') center/cover ;
-   grid-column:3;
 }
 .il4{
-   background: url('./assets/Illustration/4.jpg') center/cover ;
-   grid-column:3
+   background: url('./assets/Illustration/4.jpg') center/contain ;
 }
 .il5{
-   background: url('./assets/Illustration/5.jpeg') center/contain ;
-   grid-column:1;
-
-   grid-row: 2/span 2;
+   background: url('./assets/Illustration/5.jpeg') center/cover ;
+   grid-column:span 2; 
    
 }
 
@@ -231,10 +217,11 @@ a{
 
 .gallery-container{
     display:grid;
-    grid-gap:15px;
+    grid-gap:80px;
+    padding-bottom:30px;
     width:100%;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows:repeat(3,33vh);
+    grid-template-rows:repeat(7,33vh);
 }
 
 
@@ -248,17 +235,17 @@ a{
 
 }
 
-:root{
-    background-color:#eee;
-}
+
 
 .gallery-container > *{
-    border-radius:4px;
-    border:  2px solid #ebebeb;    
+    /* border-radius:4px;
+    border:  2px solid #ebebeb;     */
+    box-shadow: 0px 10px 20px #CCC;
+    border-radius: 5px;
 
 }
 
-.gallery-container > *:before{
+/* .gallery-container > *:before{
     border: 12px #fafafa solid;
     content:"";
     background:none;
@@ -269,7 +256,7 @@ a{
     right: 0px;
     bottom: 0px;
     pointer-events: none;
-}
+} */
 
 .cat-content{
     display:grid;
@@ -312,10 +299,12 @@ export default {
         lax.setup();
         document.addEventListener('scroll', function(x) {
             lax.update(window.scrollY)
-        }, false);
+        }, false);        
     },   
     methods:{
-
+        toggle(e){
+            this.$parent.show =  !this.$parent.show
+        },
         coordinates(e){
            this.x = (e.clientX - window.innerWidth/2)/window.innerWidth;
            this.y = (e.clientY - window.innerHeight/2)/window.innerHeight;
