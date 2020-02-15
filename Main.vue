@@ -15,9 +15,9 @@
                     | army
                 div where design & development meet
                 .btn-container
-                    button("@click"="toggle",style="border:2px #0c0c0c solid;background-color:#eee") Contact
+                    button("@click"="toggle",style="border:2px #0c0c0c solid;background-color:#eee") View Reel
                     p 
-                    button(style="background-color:#0c0c0c;color:#eee") View Reel
+                    button(style="background-color:#0c0c0c;color:#eee") Contact
                 .social
                     a.social-item(href="https://github.com/lsroa") 
                         p G
@@ -30,7 +30,7 @@
 
         .second(data-aos="fade-up")
                 strong(style="font-family: 'Abril Fatface';font-size:48px") What do 
-                    span(style="color:var(--red)") I solve
+                    span(style="color:var(--yellow)") I solve
                 ol.service
                     li
                         strong  Digital experiences 
@@ -49,24 +49,42 @@
             | de
             | sig 
             | ner             
-        div("@mousemove"="coordinates",style="width:100%;margin:auto;grid-column:1/-1")            
+        div("@mousemove"="coordinates","@click"="clickedXY",style="width:100%;margin:auto;grid-column:1/-1")            
             .cat
                 strong.cat-bg 3d Illustration Development UI/UX Animation
                 .cat-content
                     p.subt 
-                        | this.
-                        strong 3d General
+                        | My.
+                        strong STUFFF
                     .gallery-container
-                        .d31(data-aos="fade-up",data-aos-delay="160")
-                        .d32(data-aos="fade-up",data-aos-delay="100")
+                        .ui1(data-aos="fade-up",data-aos-delay="110")
+                            img(src="./assets/Frontend/Home.jpg")
+                            strong UX/UI 
+                            div made for local restaurant
+                        //- .d31(data-aos="fade-up",data-aos-delay="160")
+                        //-     video(src="./assets/horn.webm" autoplay loop)
+                        //- .d32(data-aos="fade-up",data-aos-delay="100")
                         .an2(data-aos="fade-up",data-aos-delay="120")
+                            video(src="./dist/pcGuy.webm" autoplay loop)
                         .d3d(data-aos="fade-up",data-aos-delay="100")
                         .il4(data-aos="fade-up",data-aos-delay="200")
                         .il2(data-aos="fade-up",data-aos-delay="50")
+                            img(src="./assets/Illustration/2.jpeg")
+                            strong UI/UX & Illustration
+                            div Web Agency
                         .an1(data-aos="fade-up") 
                         .il1(data-aos="fade-up",data-aos-delay="100")
                         .il3(data-aos="fade-up",data-aos-delay="150")
-                        .il5(data-aos="fade-up",data-aos-delay="250") 
+                        div(data-aos="fade-up",data-aos-delay="250",style="grid-column:span 2")
+                            .il5
+                            strong UI/UX & Illustration
+                            div Web page  designed and developed for a marketing agency
+                        div(data-aos="fade-up",data-aos-delay="120")
+                            video(src="./dist/pcGuy.webm" autoplay loop)
+                        .il4(data-aos="fade-up",data-aos-delay="50")
+                            video(src="./assets/ghost.webm" autoplay loop)
+                            
+
             .footer
                 .credits 
                     strong(style="font-size:22px;color:#ccc") Credits
@@ -76,7 +94,7 @@
                         p Vue 
                     a(href="https://blender.org")
                         p Blender
-                Canvas(":x"="x",":y"="y")
+                Canvas(":x"="x",":y"="y",":clicked"="clicked",":clickX"="clickX",":clickY"="clickY")
                 Contact
                
         
@@ -112,6 +130,9 @@
 }
 .yellow-fill{
     fill: var(--yellow);
+}
+.yellow2-fill{
+    fill: var(--yellow2);
 }
 .service{
     grid-template-columns: repeat(2,1fr);    
@@ -151,49 +172,72 @@ a{
     color:inherit;
 }
 
+.ui1{
+    grid-column: 3;
+    grid-row:1; 
+}
+
+.gallery-container> div>img{
+    width:100%;
+    margin-bottom:14px;
+}
+
 .an1{
    background: url('./assets/Animation/1.gif') center/cover ;
    grid-row:span 2;
 
 }
 .an2{
-   background: url('./assets/Animation/2.gif') center/cover ;
    grid-column: span 2;
-   grid-row: span 2;
+   grid-row: 2/span 2;
+
+}
+
+
+.il4{
+    grid-column: 3;
+}
+
+video{
+    width:100%;
+    height:100%;
 
 }
 .d31{
-   background: url('./assets/3d.General/1.png') center/cover ;
+   grid-column:2;
+   
 }
+
+
 
 .d32{
     background: url('./assets/3d.General/2.jpg') center/cover ;
+    grid-column:3;
 }
 .d3d{
     background: url('./assets/3d.General/3.jpg') center/contain ;
-    grid-row:span 2;
+    grid-row:3/span 2;
+    grid-column: 3;
+    
 }
 .il1{
    background: url('./assets/Illustration/1.jpg') center/cover ;
    grid-row:span 3;
 }
-.il2{
-   background: url('./assets/Illustration/2.jpeg') center/cover ;
-}
+
 .il3{
    background: url('./assets/Illustration/3.jpg') center/cover ;
 }
 .il4{
-   background: url('./assets/Illustration/4.jpg') center/contain ;
+   /* background: url('./assets/Illustration/4.jpg') center/contain ; */
 }
 .il5{
    background: url('./assets/Illustration/5.jpeg') center/cover ;
-   grid-column:span 2; 
-   
+   height:85%;
+   margin-bottom:14px;
 }
 
-
-.subt:before{
+.subt::before{
     content:"";
     width:90px;
     height:40px;
@@ -221,8 +265,9 @@ a{
     padding-bottom:30px;
     width:100%;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows:repeat(7,33vh);
+    grid-template-rows:repeat(8,33vh);
 }
+
 
 
 
@@ -237,26 +282,8 @@ a{
 
 
 
-.gallery-container > *{
-    /* border-radius:4px;
-    border:  2px solid #ebebeb;     */
-    box-shadow: 0px 10px 20px #CCC;
-    border-radius: 5px;
 
-}
 
-/* .gallery-container > *:before{
-    border: 12px #fafafa solid;
-    content:"";
-    background:none;
-    display: block;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    pointer-events: none;
-} */
 
 .cat-content{
     display:grid;
@@ -280,7 +307,10 @@ export default {
     data(){
         return{
             x:0,
-            y:0
+            y:0,
+            clickX:0,
+            clickY:0,
+            clicked: false
         }
     },
     components:{
@@ -304,6 +334,13 @@ export default {
     methods:{
         toggle(e){
             this.$parent.show =  !this.$parent.show
+        },
+        clickedXY(e){
+            this.clicked = !this.clicked;
+            this.clickX = e.pageX;
+            this.clickY = e.pageY;
+            console.log(e,this.clickX,this.clickY)
+
         },
         coordinates(e){
            this.x = (e.clientX - window.innerWidth/2)/window.innerWidth;

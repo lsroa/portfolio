@@ -11,7 +11,7 @@ import {
 } from "postprocessing";
 
 import GLTFLoader from "three-gltf-loader";
-import { PointLight } from "three";
+import { RectAreaLight } from "three";
 
 
 let mesh, scene, camera, renderer, aoPass, ssaoEffect, normalPass, loader, renderPass, composer, clock, mixerUpdateDelta;
@@ -44,13 +44,15 @@ export default function init(vue) {
 
   // Load GLTF model
   loader = new GLTFLoader();
-  loader.load("./Designer.8.5.glb", gltf => {
+  loader.load("./Designer.9.7.glb", gltf => {
     console.log(gltf.scene);
     for (let i = 0; i < gltf.animations.length; i++) {
       loadAnimation(gltf.scene, gltf.animations[i])
     }
     scene.add(gltf.scene);
     vue.loading = false;
+
+    console.log(scene);
     mesh = scene.children.reduce((a, b) => {
       return [...a, b.name]
     }, []).indexOf("Scene");
@@ -85,13 +87,17 @@ export default function init(vue) {
   composer.render(scene, camera);
 
 
-
-
+  // a = 0 ; b = 800; c = 185; d = 339;
+  let ramp = (x, a, b, c, d) => {
+    return (c + (x - a)) * ((c - d) / (a - b))
+  }
 
   window.addEventListener("scroll", e => {
     scene.children[mesh].rotation.y = window.scrollY * -0.001
+    scene.children[0].color.setRGB(Math.min(0.8, ramp(scrollY, 0, 600, 0, 1)), Math.max(0, -1 * ramp(scrollY, 900, 0, 0.92, 0)), Math.max(0, -1 * ramp(scrollY, 900, 0, 1, 0)));
+
     if (scene.children[mesh].rotation.y < -0.8) {
-      scene.children[mesh].rotation.y = -0.8
+      scene.children[mesh].rotation.y = -0.8;
     }
 
   });
@@ -111,14 +117,16 @@ const loadAnimation = (model, animation) => {
 
 const addLights = () => {
 
-  let pointLight1 = new THREE.DirectionalLight(0xCC4645, 1.5);
+  let pointLight1 = new THREE.DirectionalLight(0x00E1FF, 1.2);
   pointLight1.lookAt(0, 0, 0);
   pointLight1.position.set(0, 0, 150);
   scene.add(pointLight1);
 
   let ambientLight = new THREE.AmbientLight(0xFFFFFF, 0.85);
-  ambientLight.position.set(0, 0, 20);
+  ambientLight.position.set(0, 0, 0);
   scene.add(ambientLight);
+
+
 
 
   let dirLight = new THREE.DirectionalLight(0xFFFFFF, 0.4);

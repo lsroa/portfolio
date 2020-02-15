@@ -8,8 +8,8 @@
         svg(viewBox="0 0 400 400",style="fill:var(--yellow);right:0;position:absolute;top:0;z-index:-7")
             ellipse(cx="190",cy="100",rx="80",ry="80")
             rect(x="320",y="130",width="25",height="25",class="red-fill")
-            rect(x="0",y="230",width="80%",height="30%")
-            rect(x="0",y="360",width="80%",height="10",class="red-fill")
+            rect(x="0",y="230",width="80%",height="30%",class="red-fill")
+            rect(x="0",y="360",width="80%",height="10")
         .container(v-show="show")
             #canvas         
         video.bgd(v-show="!show",src="./dist/designer-no-bg.webm" autoplay loop)
@@ -44,8 +44,6 @@ export default {
 
 
 <style>
-
-
 
 .v-enter-active,
 .v-leave-active {
