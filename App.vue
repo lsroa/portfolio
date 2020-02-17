@@ -6,7 +6,7 @@
         
         Main  
         svg(viewBox="0 0 400 400",style="fill:var(--yellow);right:0;position:absolute;top:0;z-index:-7")
-            ellipse(cx="190",cy="100",rx="80",ry="80")
+            ellipse(id= "fu" cx="190",cy="100",rx="80",ry="80")
             rect(x="320",y="130",width="25",height="25",class="red-fill")
             rect(x="0",y="230",width="80%",height="30%",class="red-fill")
             rect(x="0",y="360",width="80%",height="10")
@@ -44,7 +44,18 @@ export default {
 
 
 <style>
-
+@keyframes foo{
+    50%{
+    transform:
+        scale(1.03)
+    };
+}
+#fu{
+    transform-box: fill-box;
+    transform-origin: 50% 50%;
+    animation: foo infinite .6s ease-in-out;
+    
+}
 .v-enter-active,
 .v-leave-active {
     transition: all .5s;
@@ -90,9 +101,7 @@ export default {
     grid-auto-flow:column;
     grid-template-columns:3fr 1fr 3fr;    
 }
-.credits{
-    padding-top:80px;
-}
+
 body{
     display: grid;    
     font-family:sans-serif;
@@ -138,15 +147,15 @@ body{
 }
 
 .footer{
-    grid-column: 1/-1;
-    grid-template-columns: repeat(3,1fr);
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
     background: #272727;
+    grid-gap:10px;
     display: grid;
     color: #8b8b8b;
-    justify-items: center;
-    align-items: start;
-    height: 50vh;
-    justify-self: stretch; 
+    justify-content:center;
+    align-items: center;
+    height: 90vh;
 }
 .menu{
     display:grid;

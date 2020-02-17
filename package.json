@@ -4,7 +4,7 @@
   "description": "Lsroa.xyz protfolio website",
   "main": "index.html",
   "scripts": {
-    "start": "ip addr|grep inet && parcel index.html -p 8080",
+    "start": "ip addr|grep -o -P '(?<=inet).*(?=/20 brd)'  && parcel index.html -p 8080",
     "build": "parcel build index.html"
   },
   "dependencies": {

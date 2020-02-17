@@ -3,7 +3,8 @@
         
         .first
             .menu
-                .menu-item LSR
+                .menu-item 
+                    img(src="./assets/lsr.svg",style="transform:scale(0.6)")
                 .menu-item Contact
                 .menu-item services
                 .menu-item about
@@ -28,7 +29,7 @@
                     a.social-item(href="https://dribbble.com/lsroa")
                         p D
 
-        .second(data-aos="fade-up")
+        .second(data-aos="fade-up",data-aos-delay="220")
                 strong(style="font-family: 'Abril Fatface';font-size:48px") What do 
                     span(style="color:var(--yellow)") I solve
                 ol.service
@@ -44,12 +45,18 @@
                     li
                         strong Web Apps
                         |  for your business or service
+                    li 
+                        strong Visual identity
+                        |  that shine every where 
+                    li 
+                        strong Product design
+                        |  using Desing sprint for quick testing
     
         div.designer 
             | de
             | sig 
             | ner             
-        div("@mousemove"="coordinates","@click"="clickedXY",style="width:100%;margin:auto;grid-column:1/-1")            
+        div("@mousemove"="coordinates",style="width:100%;margin:auto;grid-column:1/-1")            
             .cat
                 strong.cat-bg 3d Illustration Development UI/UX Animation
                 .cat-content
@@ -57,44 +64,61 @@
                         | My.
                         strong STUFFF
                     .gallery-container
-                        .ui1(data-aos="fade-up",data-aos-delay="110")
+                        Item.an4(data-aos="fade-up",data-aos-delay="250",title="strong UI/UX & Full Stack Development")
+                            img(src="./assets/Frontend/uiux.png",style="background:blue")
+                            img(src="./assets/Frontend/uiux.png")
+
+
+                            //- strong UI/UX & Full Stack Development
+                            //- div Co-Founder 
+                        Item.ui1(data-aos="fade-up",data-aos-delay="110")
                             img(src="./assets/Frontend/Home.jpg")
-                            strong UX/UI 
-                            div made for local restaurant
+                            //- strong UX/UI 
+                            //- div made for a Local restaurant
+                          
+                        Item.item1(data-aos="fade-up",data-aos-delay="250")
+                            img(src="./assets/Illustration/5.jpeg")
+                            //- strong UI/UX & Illustration
+                            //- div Web page  designed and developed for a marketing agency    
                         //- .d31(data-aos="fade-up",data-aos-delay="160")
                         //-     video(src="./assets/horn.webm" autoplay loop)
                         //- .d32(data-aos="fade-up",data-aos-delay="100")
-                        .an2(data-aos="fade-up",data-aos-delay="120")
-                            video(src="./dist/pcGuy.webm" autoplay loop)
-                        .d3d(data-aos="fade-up",data-aos-delay="100")
-                        .il4(data-aos="fade-up",data-aos-delay="200")
-                        .il2(data-aos="fade-up",data-aos-delay="50")
+                        Item.d3d(data-aos="fade-up",data-aos-delay="100")
+                            img(src="./assets/3d.General/3.jpg")
+                            //- strong Backend
+                            //- div Web scrapper for news website
+                        Item.il2(data-aos="fade-up",data-aos-delay="50")
                             img(src="./assets/Illustration/2.jpeg")
-                            strong UI/UX & Illustration
-                            div Web Agency
-                        .an1(data-aos="fade-up") 
+                            //- strong UI/UX & Illustration
+                            //- div Web Agency
+                        Item.an1(data-aos="fade-up",data-aos-delay="350") 
+                            img(src="./assets/Frontend/shop.jpg")
                         .il1(data-aos="fade-up",data-aos-delay="100")
-                        .il3(data-aos="fade-up",data-aos-delay="150")
-                        div(data-aos="fade-up",data-aos-delay="250",style="grid-column:span 2")
-                            .il5
-                            strong UI/UX & Illustration
-                            div Web page  designed and developed for a marketing agency
-                        div(data-aos="fade-up",data-aos-delay="120")
+                        Item.il3(data-aos="fade-up")
+                            img(src="./assets/Backend/cart.png",style="background-color:var(--yellow)") 
+                            //- strong Cart implementation
+                            //- div Redux + hooks & vue   
+                        Item(data-aos="fade-up",data-aos-delay="250",style="grid-column:span 2")
+                            .il6                           
+                            //- strong UI/UX & Illustration
+                            //- div Web page  designed and developed for a marketing agency
+                        Item(data-aos="fade-up",data-aos-delay="100")
                             video(src="./dist/pcGuy.webm" autoplay loop)
-                        .il4(data-aos="fade-up",data-aos-delay="50")
+                        Item.il4(data-aos="fade-up",data-aos-delay="250")
                             video(src="./assets/ghost.webm" autoplay loop)
                             
 
             .footer
-                .credits 
-                    strong(style="font-size:22px;color:#ccc") Credits
-                    a(href="https://threejs.org")
-                        p Three.js 
-                    a(href="https://vuejs.org")
-                        p Vue 
-                    a(href="https://blender.org")
-                        p Blender
-                Canvas(":x"="x",":y"="y",":clicked"="clicked",":clickX"="clickX",":clickY"="clickY")
+                div(style="display:grid;grid-column:2;height:100%;align-content:end")
+                    .credits 
+                        strong(style="font-size:22px;color:#ccc") Lets build something !
+                        a(href="https://threejs.org")
+                            p Three.js 
+                        a(href="https://vuejs.org")
+                            p Vue 
+                        a(href="https://blender.org")
+                            p Blender
+                    Canvas(":x"="x",":y"="y",":clickX"="clickX",":clickY"="clickY")
                 Contact
                
         
@@ -156,6 +180,15 @@ ol li{
     margin-left:30px;
 }
 
+.il3{
+    justify-content:center;
+    width:100%;
+}
+.il6{
+    background: url("./assets/Illustration/5.jpeg") center/cover;
+    height:200px;
+    width:100%;
+}
 
 ol li::before{
     content: "0" counter(my-counter);
@@ -171,29 +204,38 @@ a{
     text-decoration: none;
     color:inherit;
 }
-
+.an4{
+    grid-column: span 2;
+    grid-template-columns: repeat(2, 1fr);
+}
 .ui1{
     grid-column: 3;
-    grid-row:1; 
+    grid-row:1/span 2; 
+}
+.gallery-container> div{
+    display:inline-grid;
+    grid-gap:10px;
+    grid-template-columns:1;
+    align-content:start
 }
 
-.gallery-container> div>img{
+.gallery-container> div > img{
+    max-width:100%;
+    max-height:100%;
+}
+.item1{
+    grid-column:span 2;
+    grid-row:3;
+}
+.item1 > img{
     width:100%;
-    margin-bottom:14px;
 }
 
 .an1{
-   background: url('./assets/Animation/1.gif') center/cover ;
    grid-row:span 2;
+   
 
 }
-.an2{
-   grid-column: span 2;
-   grid-row: 2/span 2;
-
-}
-
-
 .il4{
     grid-column: 3;
 }
@@ -215,26 +257,27 @@ video{
     grid-column:3;
 }
 .d3d{
-    background: url('./assets/3d.General/3.jpg') center/contain ;
-    grid-row:3/span 2;
+    grid-row:span 2;
     grid-column: 3;
     
 }
 .il1{
    background: url('./assets/Illustration/1.jpg') center/cover ;
    grid-row:span 3;
+   grid-column:1;
+}
+.item1{
+    grid-column: 1/span 2;
+    grid-row:span 2;
 }
 
-.il3{
-   background: url('./assets/Illustration/3.jpg') center/cover ;
-}
+
 .il4{
    /* background: url('./assets/Illustration/4.jpg') center/contain ; */
 }
 .il5{
    background: url('./assets/Illustration/5.jpeg') center/cover ;
-   height:85%;
-   margin-bottom:14px;
+   min-width:100%;
 }
 
 .subt::before{
@@ -262,10 +305,10 @@ video{
 .gallery-container{
     display:grid;
     grid-gap:80px;
-    padding-bottom:30px;
+    padding-bottom:120px;
     width:100%;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows:repeat(8,33vh);
+    grid-template-rows:repeat(7,33vh);
 }
 
 
@@ -301,6 +344,7 @@ import "aos/dist/aos.css";
 
 import Contact from "./Contact.vue";
 import Canvas from "./Canvas.vue";
+import Item from "./Item.vue";
 
 export default {
 
@@ -310,12 +354,12 @@ export default {
             y:0,
             clickX:0,
             clickY:0,
-            clicked: false
         }
     },
     components:{
         Contact,
-        Canvas
+        Canvas,
+        Item
     },
     mounted(){
         const elements = document.getElementsByClassName("cat-bg")
@@ -335,13 +379,7 @@ export default {
         toggle(e){
             this.$parent.show =  !this.$parent.show
         },
-        clickedXY(e){
-            this.clicked = !this.clicked;
-            this.clickX = e.pageX;
-            this.clickY = e.pageY;
-            console.log(e,this.clickX,this.clickY)
-
-        },
+        
         coordinates(e){
            this.x = (e.clientX - window.innerWidth/2)/window.innerWidth;
            this.y = (e.clientY - window.innerHeight/2)/window.innerHeight;
