@@ -1,12 +1,11 @@
 <template lang="pug">
     .contact
-        strong(style="font-size:22px;color:#ccc") Contact
         p Email
         input(placeholder="your@email.com")
-        p Text
+        p Message
         input(placeholder="text")
-        div(style="margin-top:15px")
-            button Send
+        div(style="justify-self:end;margin-top:30px")
+            button(style="padding:10px;padding-left:70px;padding-right:70px") Send
 </template>
 
 <script>
@@ -18,9 +17,19 @@
         }
     }
 </script>
-<style>
+<style scoped>
+/* @media (max-width:768px){
+    .contact{
+            padding:5vh;
+            grid-row: 2;
+            grid-column: 1;
+    }
+}
 .contact{
     display:grid;
-    padding-top:80px;
+    grid-column:3;
+} */
+input{
+    height: 30px;
 }
 </style>

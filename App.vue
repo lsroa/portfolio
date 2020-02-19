@@ -5,7 +5,7 @@
                 video(src="./dist/ast.webm" autoplay loop)
         
         Main  
-        svg(viewBox="0 0 400 400",style="fill:var(--yellow);right:0;position:absolute;top:0;z-index:-7")
+        svg(id="svgBG" viewBox="0 0 400 400",style="fill:var(--yellow);right:0;position:absolute;top:0;z-index:-7")
             ellipse(id= "fu" cx="190",cy="100",rx="80",ry="80")
             rect(x="320",y="130",width="25",height="25",class="red-fill")
             rect(x="0",y="230",width="80%",height="30%",class="red-fill")
@@ -135,28 +135,9 @@ body{
     
 }
 
-.first{
-    display:grid;
-    width: 100%;
-    height: 90vh;
-    justify-items: center;
-    align-content:center;
-    grid-gap:20px;
-    grid-column-start: 2;
 
-}
 
-.footer{
-    display:grid;
-    grid-template-columns: repeat(4,1fr);
-    background: #272727;
-    grid-gap:10px;
-    display: grid;
-    color: #8b8b8b;
-    justify-content:center;
-    align-items: center;
-    height: 90vh;
-}
+
 .menu{
     display:grid;
     align-items: center;
@@ -201,7 +182,7 @@ button{
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 1px solid #272727;
+    border: 1px solid black;
 }
 #canvas{
     padding:0;
@@ -213,23 +194,7 @@ button{
     position: sticky;
 }
 
-#app{
-    position: absolute;
 
-    z-index:0;
-    display:grid;
-
-    justify-items: center;
-    align-items: center;
-
-    grid-template-columns: 1fr repeat(2,3fr) 1fr;
-    grid-template-rows: 100vh;
-
-    margin: auto;
-    left:0;
-    right:0;
-    width:100%;
-}
 
 .title > div:nth-child(2){
     font-size:18vh;
@@ -244,76 +209,8 @@ button{
     font-size:48px;
 }
 
-.contact{
-    width: 27vw;
-}
 
 
-@media (max-width:768px){
-    #app{
-        display:grid;
-    }
 
-
-    .container{
-        display:none;
-    }
-    .first{
-        grid-column:1/-1;  
-        align-self: center;  
-        align-items:center;
-        justify-content: center;    
-    }
-    .follower{
-        display:none;
-    }
-    .title{
-        text-align:center;
-    }
-    .designer{
-        grid-column: 1/-1;
-        opacity:0;
-    }
-    .second{
-        grid-column: 2/-2;
-        height:45vh;
-    }
-    .gallery-container{
-        grid-template-columns: 1fr;
-    }
-    .credits{
-        display:none;
-    }
-    .footer{
-        grid-template-columns:1fr;
-    }
-    .contact{
-        padding:5vh;
-        align-self:center;
-        width:50%;
-    }
-    .title > div:nth-child(1){
-        font-size:3vh;
-    }
-    .title > div:nth-child(2){
-        font-size:12vh;
-    }
-    .title > div:nth-child(3){
-        font-size:5vh;
-    }
-
-    .gallery-container > *{
-        grid-column:auto;
-        grid-row:auto;
-        width:auto;
-        background-position:center;
-        background-size:contain;
-        background-repeat:no-repeat;
-    }
-
-    .menu > div:nth-child(n+2){
-        display:none;
-    }
-}
 
 </style>
