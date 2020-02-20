@@ -18,6 +18,7 @@
 <script>
 import Main from "./Main.vue";
 import init from "./designer.js";
+import isMobile from "is-mobile";
 
 
 export default {
@@ -30,9 +31,18 @@ export default {
             show:true
         }
     },
+    created(){
+        if(isMobile()){
+            this.loading = false
+        }
+    },
     mounted(){
         // setTimeout(() => {
-           init(this) 
+
+        if (!isMobile()){
+            init(this) 
+        }
+        
         //    this.loading = false
         // }, 5000);
         
