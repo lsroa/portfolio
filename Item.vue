@@ -1,7 +1,7 @@
 <template lang="pug">
     .main("@click"="clicked")
-        .links 
-            .circle 💻 | 👁 
+        //- .links 
+        //-     .circle 💻 | 👁 
         slot
 </template>
 <script> 

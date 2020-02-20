@@ -12,7 +12,7 @@
             rect(x="0",y="360",width="80%",height="10")
         .container(v-show="show")
             #canvas         
-        video.bgd(v-show="!show",src="./dist/designer-no-bg.webm" autoplay loop)
+        video.bgd(src="./dist/designer1.0.webm" autoplay loop)
         
 </template>
 <script>
@@ -94,13 +94,7 @@ export default {
 }
 
 
-.btn-container{
-    grid-gap:5px;
-    padding:5px;
-    display:grid;
-    grid-auto-flow:column;
-    grid-template-columns:3fr 1fr 3fr;    
-}
+
 
 body{
     display: grid;    
@@ -138,76 +132,7 @@ body{
 
 
 
-.menu{
-    display:grid;
-    align-items: center;
-    grid-gap: 5px;
-    grid-auto-flow: column;
-    width:80%;
-}
-.menu-item{
-    text-align: center;
-}
 
-
-.title{
-    text-align: right;
-    margin-right: 20px;
-    display: grid;
-    grid-gap:20px;
-}
-
-button{
-    background-color:var(--yellow);
-    border:none;
-    color:#272727;
-}
-
-
-.title > * {
-    line-height: 84%;
-}
-
-.social{
-    display: grid;
-    grid-auto-flow: column;
-    justify-items: center;
-}
-
-.social-item{   
-    display: grid;
-    align-content: center;
-    align-items: center; 
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 1px solid black;
-}
-#canvas{
-    padding:0;
-    margin: 0px;
-    top: -1px;
-    height: 100vh;
-    margin-left: 0;
-    margin-right: 0;
-    position: sticky;
-}
-
-
-
-.title > div:nth-child(2){
-    font-size:18vh;
-    font-family: 'Abril Fatface',serif;
-}
-
-.title > div:nth-child(1){
-    font-size:18px;
-    margin-right:5px;
-}
-.title > div:nth-child(3){
-    font-size:48px;
-}
 
 
 
