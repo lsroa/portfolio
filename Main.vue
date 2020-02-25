@@ -64,33 +64,101 @@
                         | My.
                         strong STUFFF
                     .gallery-container
-                        Item.item-1(data-aos="fade-up",data-aos-delay="250",title="strong UI/UX & Full Stack Development")
+                        Item.item-1(
+                            data-aos="fade-up",
+                            data-aos-delay="250",
+                            title="IOS & Android App",
+                            tag1="Front",
+                            tag2="-end",
+                            text="strong UI/UX & Full Stack Development"
+                        )
                             img(src="./assets/Frontend/ed.png")
                             img(src="./assets/Frontend/ed2.png")
-                        Item.item-2(data-aos="fade-up",data-aos-delay="110")
-                            img(src="./assets/Frontend/Home.jpg")
-                        Item.item-3(data-aos="fade-up",data-aos-delay="250")
-                            img(src="./assets/Illustration/5.jpeg")
-                        Item.item-4(data-aos="fade-up",data-aos-delay="100")
-                            img(src="./assets/3d.General/3.jpg")
-                        Item.item-5(data-aos="fade-up",data-aos-delay="50")
-                            img(src="./assets/Illustration/2.jpeg")
-                        Item.item-6(data-aos="fade-up",data-aos-delay="350") 
-                            img(src="./assets/Frontend/shop.jpg")
-                        Item.item-7(data-aos="fade-up",data-aos-delay="100")
-                        Item.item-8(data-aos="fade-up")
-                            img(src="./assets/Backend/cart.png",style="background-color:var(--yellow)") 
-                        Item.item-9(data-aos="fade-up",data-aos-delay="250")
-                            img(src="./assets/3d.General/2.jpg")                           
-                        Item#item-10(data-aos="fade-up",data-aos-delay="100")
-                            video(src="./dist/pcGuy.webm" autoplay loop)
-                        Item#item-11(data-aos="fade-up",data-aos-delay="250")
+                        Item.item-2(
+                            data-aos="fade-up",
+                            data-aos-delay="110",
+                            title="Landing Page",
+                            tag1="UI",
+                            tag2="UX",
+                            text=" Web Design for a local restaurant"
+                        )
+                                img(src="./assets/Frontend/Home.jpg")
+                        Item.item-3(
+                            data-aos="fade-up",
+                            data-aos-delay="250",
+                            title="Full-Stack solution",
+                            tag1="Full",
+                            tag2="Stack",
+                            text="Shop app made with React Native")
+                                img(src="./assets/Illustration/5.jpeg")
+                        Item.item-4(
+                            data-aos="fade-up",
+                            data-aos-delay="100",
+                            title="Advance Scrapper",
+                            tag1="Back",
+                            tag2="-end",
+                            text=" Web Design for a local restaurant")
+                                img(src="./assets/3d.General/3.jpg")
+                        Item.item-5(
+                            data-aos="fade-up",
+                            data-aos-delay="50",
+                            title="Landing Page",
+                            tag1="UI",
+                            tag2="UX",
+                            text=" Web Design for a local restaurant")
+                                img(src="./assets/Illustration/2.jpeg")
+                        Item#item-6(
+                            data-aos="fade-up",
+                            data-aos-delay="350",
+                            title=" Page",
+                            tag1="UI",
+                            tag2="UX",
+                            text=" Web Design for a local restaurant") 
+                                img(src="./assets/Frontend/shop.jpg")
+                        Item#item-7(
+                            data-aos="fade-up",
+                            data-aos-delay="100",
+                            title="Landing Page",
+                            tag1="Gra",
+                            tag2="phic",
+                            text=" Web Design for a local restaurant")
+                                img(src="./assets/Illustration/1.jpg")
+                        Item.item-8(
+                            data-aos="fade-up",
+                            title="Cart implementation",
+                            tag1="Front",
+                            tag2="-end",
+                            text=" Web Design for a local restaurant")
+                                img(src="./assets/Backend/cart.png",style="background-color:var(--yellow)") 
+                        Item.item-9(
+                            data-aos="fade-up",
+                            data-aos-delay="250",
+                            title="Visual branding",
+                            tag1="Art",
+                            tag2="Dir.",
+                            text=" Web Design for a local restaurant")
+                                img(src="./assets/3d.General/2.jpg")                           
+                        Item#item-10(
+                            data-aos="fade-up",
+                            data-aos-delay="100",
+                            title="Design exploration",
+                            tag1="Art",
+                            tag2="Dir.",
+                            text=" Mix of design techniques exploration on Dribble")
+                                video(src="./dist/pcGuy.webm" autoplay loop)
+                        Item#item-11(
+                            data-aos="fade-up",
+                            data-aos-delay="250",
+                            tag1="Art",
+                            tag2="Dir.",
+                            title="Landing Page",
+                            text=" Web Design for a local restaurant")
                             video(src="./assets/ghost.webm" autoplay loop)
                             
 
             .footer
                 .foo-title
-                    p Lets build something cool !
+                    p(style="font-family: 'Abril Fatface'") Lets build something cool !
                     p I am already following you
                 .social-2 
                         a.social-item(href="https://github.com/lsroa") 
@@ -287,16 +355,18 @@ a{
     width:100%;
 }
 
-.item-6{
+#item-6{
    grid-row:span 2;
 }
 #item-11{
     grid-column: 3;
+
 }
 
+
 video{
-    max-width:100%;
-    max-height:100%;
+    width:100%;
+    height:100%;
     z-index:-1;
 
 }
@@ -306,8 +376,7 @@ video{
     grid-column: 3;
     
 }
-.item-7{
-   background: url('./assets/Illustration/1.jpg') center/cover ;
+#item-7{
    grid-row:span 3;
    grid-column:1;
 }
@@ -448,22 +517,29 @@ button{
 @media (max-width:768px){
     .gallery-container> div{
         grid-column: span 2;
+        grid-row: span 1;
     }
-    
+    .description{
+        padding-top: 15px;
+    }
+
+    .gallery-container > div > video{
+        height:70%;
+    }
     .gallery-container{
         grid-template-columns: 1fr 1fr;
         display:grid;
         grid-gap:20px;
         align-content:center;
-        padding-bottom:60px;
-        grid-template-rows: repeat(16,33vh)
+        padding-bottom:110px;
+        grid-template-rows: repeat(11,60vh)
     }
     .foo-title > p:nth-child(1){
         grid-column:1;
-        font-size: 24px;
+        font-size: 35px;
         align-self:center;
         text-align:center;
-        margin:15px;
+        margin:25px;
     }
     .bgd{
         position:absolute;
@@ -477,22 +553,22 @@ button{
         display:none;
 
     }
-    
     .foo-title > p:nth-child(2){
         display:none;
     }
     .footer{
         display:grid;
-        height: 60vh;
+        height: 80vh;
         align-items: center;
         justify-items:center;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr;
     }
-
+    
     .contact{
         grid-column:1;
         grid-row:2;
+        width:80%;
     }
     
     #app{
@@ -502,6 +578,10 @@ button{
     .item-1{
         grid-row: 1;
         
+    }
+
+    .item-1 > img {
+        grid-column: 1/-1;
     }
     .item-2{
         grid-row: 2/span 2;
@@ -515,20 +595,30 @@ button{
 
     }
 
-    .item-6{
-        grid-row: span 3;
-        
+    #item-6{
+        grid-row: span 1;
+    }
 
-        width: 100%;
+    #item-6 > img{
+        height: 100%;
+        justify-self: center;
+    }
+    #item-7{
+        grid-row: span 1;
+        
+        grid-column: span 2;
+    }
+    #item-7 > img {
+        height: 80%;
+        justify-self: center;
+        margin-top: 90px;
     }
 
     #item-10{
-        grid-column:1;
-        
-
+        grid-column:1 / span 2;
     }
     #item-11{
-        grid-column:2 ;
+        grid-column:1 / span 2;
     }
 
     #svgBG{
@@ -549,6 +639,11 @@ button{
     .follower{
         display:none;
     }
+    .service{
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+    }
+
     .title{
         text-align:center;
         margin-right:0px;

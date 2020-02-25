@@ -14,6 +14,6 @@
     height: 30px;
 }
 .contact-area{
-    height: 60px;
+    height: 90px;
 }
 </style>

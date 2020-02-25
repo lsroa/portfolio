@@ -12,7 +12,7 @@
             rect(x="0",y="360",width="80%",height="10")
         .container(v-show="show")
             #canvas         
-        video.bgd(src="./dist/designer1.0.webm" autoplay loop)
+        img.bgd(src="./assets/bg.jpg" )
         
 </template>
 <script>
