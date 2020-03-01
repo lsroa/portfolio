@@ -12,7 +12,8 @@
             rect(x="0",y="360",width="80%",height="10")
         .container(v-show="show")
             #canvas         
-        img.bgd(src="./assets/bg.jpg" )
+        div.bgd
+            img(src="./assets/Slice.png",style="max-width: 100%;margin-left: 10vw")
         
 </template>
 <script>

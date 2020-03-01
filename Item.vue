@@ -1,5 +1,5 @@
 <template lang="pug">
-    .main("@click"="clicked")
+    .main("@click"="clicked",data-aos="fade-up")
         slot
         .description 
             .designer-tag 
@@ -36,12 +36,14 @@ export default{
 <style scoped> 
 
     .main{
-        align-content:center;
-        justify-content:center;
         display:grid;
-        grid-gap:0px; 
+        align-items:center;
+        justify-content:center;
+        align-content:center;
+        grid-gap:15px;
         transition: .2s all;
     }
+
     .designer-tag{
         justify-self: end;
         margin:0px;
@@ -56,39 +58,27 @@ export default{
         color: white;
         line-height:16px;
     }    
+    
+    .text{
+        font-size:14px;
+    }
+
     .text > * {
         margin: 0px;
     }
-    .text{
-        display:grid;
-        font-size:14px;
+    .description > div{
+        margin:7px;
     }
     .description{
-        display:grid;
-        grid-column:1/-1;
-        grid-gap:20px;
+        display:flex;
         align-items:center;
-        justify-items:start;
-        justify-content:start;  
-        grid-auto-flow: column;   
-        width:100%;
-        height:0px;
-        overflow:hidden;
-        margin: auto;
         transition: all 0.2s;
     }
-    @media (max-width: 768px){
-        .description{
-            height: 80px;
-        } 
-        .text {
-            font-size: 18px;
-        }
-        
-    }
+
     
-    .main:hover > .description{
-        height: 80px;
-    }
+
+    
+    
+    
 
 </style>

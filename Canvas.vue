@@ -20,6 +20,8 @@
             </g>
                 
             <g id="bear" :transform="'translate('+ move(22,21) +')'">
+                <rect class="most" x="103" y="120" width="15" height="6" > </rect>
+                <rect class="most" x="128" y="120" width="15" height="6" > </rect>
                 <path class="cls-7" d="M214.9,215c-11,0-9-19-15.5-19s-4.5,19-15.5,19a4,4,0,0,0-4,4c0,5.5,9.75,8.75,19.5,9,9.75-.25,19.5-3.5,19.5-9A4,4,0,0,0,214.9,215Z" transform="translate(-76.9 -60)"></path>
             </g>
             <g id="cap" :transform="'translate('+ move(12,7) +')'">
@@ -62,20 +64,20 @@ svg {
 
 .cls-2,
 .cls-5,
-.cls-6,
-.cls-8{
+.cls-6
+{
     stroke:#000;
     stroke-miterlimit:10;
 }
 .cls-2{
-    fill:#bababa;
+    fill:var(--yellow2);
 }
 .cls-4{
     clip-path:url(#clip-path);
 }
 .cls-5,
-.cls-7{fill:#272727;}
+.cls-7,.most,.cls8{fill:#272727;
+}
 .cls-6{fill:none;}
-.cls-8{fill:#ffff20;}
                 
 </style>
