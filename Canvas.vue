@@ -45,6 +45,7 @@
 <script>
     export default{
         props:['x','y','clickX','clickY'],
+        name:'Canvas',
         methods:{
             move(x,y){ 
                 return `${this.x * x} ${this.y * y}`

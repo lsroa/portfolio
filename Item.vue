@@ -1,16 +1,10 @@
 <template lang="pug">
-    .main("@click"="clicked",data-aos="fade-up")
+    a.main("@click"="clicked",data-aos="fade-up",:href="this.link")
         slot
         .description 
             .designer-tag 
                 div {{this.tag1}}
                 div {{this.tag2}}
-            //- .designer-tag 
-            //-     | Front
-            //-     | -end    
-            //- .designer-tag 
-            //-     | UI
-            //-     | UX
             .text 
                 strong {{ this.title }}
                 p {{ this.text  }}
@@ -18,11 +12,13 @@
 </template>
 <script> 
 export default{
+    name:'Item',
     props:{
         title: String,
         text:  String,
         tag1:   String,
-        tag2: String        
+        tag2: String,
+        link: String,        
     },
     methods:{
         clicked(e){

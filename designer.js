@@ -45,14 +45,12 @@ export default function init(vue) {
   // Load GLTF model
   loader = new GLTFLoader();
   loader.load("./Designer.9.7.glb", gltf => {
-    console.log(gltf.scene);
     for (let i = 0; i < gltf.animations.length; i++) {
       loadAnimation(gltf.scene, gltf.animations[i])
     }
     scene.add(gltf.scene);
     vue.loading = false;
 
-    console.log(scene);
     mesh = scene.children.reduce((a, b) => {
       return [...a, b.name]
     }, []).indexOf("Scene");

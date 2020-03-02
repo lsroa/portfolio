@@ -15,7 +15,7 @@
                     | army
                 div where design & development meet
                 .btn-container
-                    button("@click"="toggle",style="border:2px #0c0c0c solid;background-color:#eee") Contact
+                    button("@click"="",style="border:2px #0c0c0c solid;background-color:#eee") Contact
                     p 
                     button(style="background-color:#0c0c0c;color:#eee") Download CV
                 .social
@@ -73,7 +73,7 @@
                             tag2="-end",
                             text="strong UI/UX & Full Stack Development"
                         )
-                            img(src="./assets/Frontend/ed.png",style="background: var(--yellow2)")
+                            img(src="./assets/Frontend/ed.png",style="align-self:center;background: var(--yellow2)")
                             img(src="./assets/Frontend/ed2.png",style="background: var(--yellow2)")
                         Item#item-2(
                             
@@ -90,6 +90,7 @@
                             title="Full-Stack solution",
                             tag1="Full",
                             tag2="Stack",
+                            link="https://www.behance.net/gallery/71665101/Grupo-DTS"
                             text="Shop app made with React Native")
                                 img(src="./assets/Illustration/5.jpeg")
                         Item#item-4(
@@ -106,6 +107,7 @@
                             title="Landing Page",
                             tag1="UI",
                             tag2="UX",
+                            link="https://www.behance.net/gallery/72776221/Prionato-UIUX"
                             text=" Web Design for a local restaurant")
                                 img(src="./assets/Illustration/2.jpeg")
                         Item#item-6(
@@ -122,12 +124,14 @@
                             title="Landing Page",
                             tag1="Gra",
                             tag2="phic",
+                            link="https://www.behance.net/gallery/72558755/Astronout-2d3d"
                             text=" Web Design for a local restaurant")
                                 img(src="./assets/Illustration/1.jpg")
                         Item#item-8(
                             
                             title="Cart implementation",
                             tag1="Front",
+                            link="https://codepen.io/lsroa",
                             tag2="-end",
                             text=" Web Design for a local restaurant")
                                 img(src="./assets/Backend/cart.png",style="background-color:var(--yellow)") 
@@ -137,6 +141,7 @@
                             title="Visual branding",
                             tag1="Art",
                             tag2="Dir.",
+                            link="https://www.behance.net/gallery/72634421/Trading-Assets-for-BALDER-Group"
                             text=" Web Design for a local restaurant")
                                 img(src="./assets/3d.General/2.jpg")                           
                         Item#item-10(
@@ -145,6 +150,7 @@
                             title="Design exploration",
                             tag1="Art",
                             tag2="Dir.",
+                            link="https://dribbble.com/lsroa"
                             text=" Mix of design techniques exploration on Dribble")
                                 video(src="./dist/pcGuy.webm" autoplay loop)
                         Item#item-11(
@@ -158,7 +164,7 @@
 
             .footer
                 .foo-title
-                    p(style="font-family: 'Abril Fatface'") Lets build something cool !
+                    p(style="font-family: 'Abril Fatface'") {{this.message}} 
                     p Follow me I am already following you !
                 .social-2 
                         a.social-item(href="https://github.com/lsroa") 
@@ -203,7 +209,7 @@
                             
                     
                 Canvas(":x"="x",":y"="y",style="grid-row:3;grid-column:2;align-self:end")
-                Contact
+                Contact(@onSubmit="handleForm")
                
         
         
@@ -368,7 +374,7 @@ video{
     max-width:100%;
 }
 
-.gallery-container > div > img{
+.gallery-container > a > img{
     max-width: 100%;
 }
 #item-1{
@@ -684,7 +690,7 @@ button{
 </style>
 
 <script>
-import lax from "lax.js";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -698,7 +704,8 @@ export default {
     data(){
         return{
             x:0,
-            y:0
+            y:0,
+            message: " Lets build something cool !"
         }
     },
     components:{
@@ -706,25 +713,13 @@ export default {
         Canvas,
         Item
     },
-    mounted(){
-        const elements = document.getElementsByClassName("cat-bg")
-
-        for(let i = 0; i < elements.length;i++){
-            lax.addElement(elements[i])
-        }
-    },
     created(){
         AOS.init();
-        lax.setup();
-        document.addEventListener('scroll', function(x) {
-            lax.update(window.scrollY)
-        }, false);        
     },   
     methods:{
-        toggle(e){
-            this.$parent.show =  !this.$parent.show
+        handleForm(data){
+            this.message = data
         },
-        
         coordinates(e){
            this.x = (e.clientX - window.innerWidth/2)/window.innerWidth;
            this.y = (e.clientY - window.innerHeight/2)/window.innerHeight;
