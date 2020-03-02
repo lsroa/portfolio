@@ -166,6 +166,7 @@
                 .foo-title
                     p(style="font-family: 'Abril Fatface'") {{this.message}} 
                     p Follow me I am already following you !
+                Canvas(":x"="x",":y"="y",style="grid-row:1/span 2;grid-column:2;align-self:end")
                 .social-2 
                         a.social-item(href="https://github.com/lsroa") 
                             <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
@@ -208,8 +209,6 @@
                             </svg>
                             
                     
-                Canvas(":x"="x",":y"="y",style="grid-row:3;grid-column:2;align-self:end")
-                Contact(@onSubmit="handleForm")
                
         
         
@@ -253,7 +252,7 @@
 
 .foo-title{
     justify-self:center;
-    grid-column:2/-2
+    grid-column:3
 }
 .foo-title> p:nth-child(1){
     font-size: 48px;
@@ -261,11 +260,10 @@
 }
 
 .social-2{
-    display:grid;
-    grid-gap:35px;
-    padding-right:35px;
-    grid-column:1;
-    justify-content:end;
+    display:flex;
+    grid-column:3;
+    justify-content:space-around;
+    justify-items: center;
 }
 
 .social-2 > a {
@@ -306,7 +304,6 @@
     grid-template-columns: repeat(4,1fr);
     background: #272727;
     grid-gap:10px;
-    height: 70vh;
     padding-top: 50px;
     color: #8b8b8b;
     justify-content:center;
