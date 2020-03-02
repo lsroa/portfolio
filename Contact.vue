@@ -10,7 +10,6 @@
         button.contact-btn(@click.prevent="handleSubmit", type="submit") Build
 </template>
 <script>
-    // import axios from "axios";
 
     export default {
         name:'Contact',
