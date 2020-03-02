@@ -12,7 +12,7 @@
 <script>
     // import axios from "axios";
 
-    export default{
+    export default {
         name:'Contact',
         data(){
             return{
@@ -25,7 +25,7 @@
         methods:{
             handleSubmit(e){
                   
-                fetch("https://www.lsroa.xyz/",{ 
+                fetch("/",{ 
                     method:"POST", 
                     body: new FormData(e.path[1]),
                     headers: {

@@ -43,7 +43,7 @@
 </template>
 
 <script>
-    export default{
+    export default {
         props:['x','y','clickX','clickY'],
         name:'Canvas',
         methods:{
