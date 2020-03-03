@@ -15,9 +15,9 @@
                     | army
                 div where design & development meet
                 .btn-container
-                    button("@click"="",style="border:2px #0c0c0c solid;background-color:#eee") Contact
-                    p 
-                    button(style="background-color:#0c0c0c;color:#eee") Download CV
+                    button(style="border:2px #0c0c0c solid;background-color:#eee") Contact
+                    p
+                    button(@click="download",style="background-color:#0c0c0c;color:#eee") Download CV
                 .social
                     a.social-item(href="https://github.com/lsroa") 
                         <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
@@ -163,11 +163,15 @@
                             
 
             .footer
+                Canvas(":x"="x",":y"="y",style="grid-row: 1;grid-column:2;align-self:end")
                 .foo-title
-                    p(style="font-family: 'Abril Fatface'") {{this.message}} 
-                    p Follow me I am already following you !
-                Canvas(":x"="x",":y"="y",style="grid-row:1/span 2;grid-column:2;align-self:end")
-                .social-2 
+                    p(style="font-family: 'Abril Fatface'") Lets build something cool !
+                    strong(style="margin:2px") roa234@gmail.com
+                    p(style="margin:2px")
+                        | +34 
+                        strong 603265501
+                    p(style="margin:2px") Madrid, Spain 28048
+                    .social-2 
                         a.social-item(href="https://github.com/lsroa") 
                             <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
@@ -207,6 +211,8 @@
                                     <path d="M0 12C0 5.373 5.372 0 12 0C18.628 0 24 5.373 24 12C24 18.627 18.628 24 12 24C5.372 24 0 18.627 0 12ZM13.0573 7.83904C15.1753 6.94204 16.8383 5.71304 18.0433 4.15904C16.3683 2.86604 14.2753 2.08704 12.0003 2.08704C11.1603 2.08704 10.3483 2.20404 9.56934 2.40104C10.8793 4.16304 12.0413 5.97804 13.0573 7.83904ZM7.52688 3.16602C8.85788 4.90802 10.0379 6.70402 11.0639 8.54702C8.63388 9.26202 5.73288 9.62901 2.37988 9.65202C3.07188 6.81702 4.98088 4.45902 7.52688 3.16602ZM21.8846 11.441C19.3096 11.019 16.9417 10.996 14.7816 11.368C14.5376 10.805 14.2846 10.243 14.0146 9.68796C16.3246 8.68796 18.1796 7.32996 19.5626 5.60596C20.9126 7.19996 21.7596 9.22496 21.8846 11.441ZM2.09991 11.744L2.08691 12C2.08691 14.407 2.95091 16.615 4.38291 18.334C6.55491 15.076 9.33991 12.911 12.7199 11.854C12.5059 11.374 12.2829 10.897 12.0499 10.422C9.26891 11.296 5.94891 11.739 2.09991 11.744ZM15.582 13.343C16.422 15.587 17.064 17.887 17.502 20.24C19.753 18.731 21.344 16.325 21.781 13.539C19.522 13.147 17.458 13.078 15.582 13.343ZM5.91602 19.81C7.88502 16.722 10.398 14.712 13.514 13.783C14.442 16.203 15.123 18.693 15.557 21.243C12.208 22.534 8.60402 21.909 5.91602 19.81Z" id="Shape" fill="url(#gradient_3)" fill-rule="evenodd" stroke="none" />
                                 </g>
                             </svg>
+                    p(style="text-align:center") Follow me I am already following you !
+                    
                             
                     
                
@@ -251,8 +257,11 @@
 }
 
 .foo-title{
-    justify-self:center;
-    grid-column:3
+    display:flex;
+    flex-direction:column;
+    grid-column:3;
+    height: 100%;
+    justify-content:space-around;
 }
 .foo-title> p:nth-child(1){
     font-size: 48px;
@@ -301,9 +310,9 @@
 
 .footer{
     display:grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: 1fr 1fr 2fr 1fr;
     background: #272727;
-    grid-gap:10px;
+    grid-gap:20px;
     padding-top: 50px;
     color: #8b8b8b;
     justify-content:center;
@@ -702,7 +711,7 @@ export default {
         return{
             x:0,
             y:0,
-            message: " Lets build something cool !"
+            
         }
     },
     components:{
@@ -714,8 +723,14 @@ export default {
         AOS.init();
     },   
     methods:{
-        handleForm(data){
-            this.message = data
+        download(){
+            fetch("./assets/bg.jpg",{
+                method: 'GET'
+            }).then(  res => {
+                console.log(res)
+            }).catch( error => {
+                console.log(error)
+            })
         },
         coordinates(e){
            this.x = (e.clientX - window.innerWidth/2)/window.innerWidth;
