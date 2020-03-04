@@ -3,14 +3,13 @@
         transition
             div.loading(v-if="loading")
                 video(src="./dist/ast.webm" autoplay loop)
-        
-        Main  
-        svg(id="svgBG" viewBox="0 0 400 400",style="fill:var(--yellow);right:0;position:absolute;top:0;z-index:-7")
+        svg(id="svgBG" viewBox="0 0 400 400")
             ellipse(id= "fu" cx="190",cy="100",rx="80",ry="80")
             rect(x="320",y="130",width="25",height="25",class="red-fill")
             rect(x="0",y="230",width="80%",height="30%",class="red-fill")
             rect(x="0",y="360",width="80%",height="10")
-        .container(v-show="show")
+        Main(@onDark="toggleDark")
+        .container
             #canvas         
         div.bgd
             img(src="./assets/Slice.png",style="max-width: 100%;margin-left: 10vw")
@@ -29,7 +28,8 @@ export default {
     data(){
         return {
             loading:true,
-            show:true
+            show:true,
+            dark: false
         }
     },
     created(){
@@ -37,116 +37,40 @@ export default {
             this.loading = false
         }
     },
+    computed:{
+        cssVars(){
+            if(this.dark){
+                return`--bg:#273737;`
+            }
+            return`--bg:#efefef`
+        }
+    },
+    methods:{
+        toggleDark(){
+            this.dark = !this.dark;
+            document.body.style.backgroundColor = !this.dark ? "#FFF":"#172727";
+            document.scene.children[0].intensity = this.dark ?  0:1.2;
+            document.body.style.color = this.dark ? "#eee":"black";
+            document.querySelector(".cat-bg").style.color = this.dark ? "#273737":"#eee";
+            document.querySelector("#svgBG").style.fill = !this.dark ? "var(--yellow)":"#273737";
+            document.scene.children[1].intensity = this.dark ?  0:0.85;
+            document.scene.children[2].intensity = this.dark ?  0.8:0;
+            document.scene.children[3].intensity = this.dark ?  0:0.4;
+            document.scene.children[4].intensity = this.dark ?  0:0.2;
+
+
+
+        }
+    }, 
     mounted(){
-        // setTimeout(() => {
 
         if (!isMobile()){
             init(this) 
         }
         
-        //    this.loading = false
-        // }, 5000);
         
     }
 }
 
 
 </script>
-
-
-<style>
-@keyframes foo{
-    50%{
-    transform:
-        scale(1.03)
-    };
-}
-#fu{
-    transform-box: fill-box;
-    transform-origin: 50% 50%;
-    animation: foo infinite .6s ease-in-out;
-    
-}
-.v-enter-active,
-.v-leave-active {
-    transition: all .5s;
-}
-.v-leave-to,
-.v-enter {
-    transform:translateY(-100vh);
-}
-
-.loading{
-    z-index:10;
-    position:absolute;
-    width:100vw;
-    height:100vh;
-    left:0px;
-    right:0px;
-    background-color:#eee;
-    margin:auto;
-    padding-top:25vh;
-    padding-bottom:25vh;
-    text-align:center;    
-}
-.loading > video {
-    width:25vh; 
-}
-
-:root{
-    background-color:#f6f6f6;
-    --red:#FF78A8;
-    --redy:#FF78A8;
-    --orange:#fb7756;
-    --yellow:#00E8FF;
-    --yellow2:#faEa60;
-    --green:#C5F95a;
-    --blue:#3C76C3;
-}
-
-
-
-
-body{
-    display: grid;    
-    font-family:sans-serif;
-
-}
-
-.cat-bg{
-    font-size: 490px;
-    line-height: 84%;
-    font-family: 'Abril Fatface',serif;
-    z-index: -1;
-    color: #eee;
-    top:0px;
-    text-align: center;
-    position: absolute;
-    align-self: center;
-    justify-self:center;
-    background: rgba(1,1,1,0);
-}
-
-.container{
-    display: grid;
-    position: relative;
-    z-index: -3;
-    
-    padding: 0;
-    margin:auto;
-    height: 200vh;
-    justify-items: flex-end;   
-    width:80%; 
-    
-}
-
-
-
-
-
-
-
-
-
-
-</style>

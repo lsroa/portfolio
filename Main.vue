@@ -1,7 +1,11 @@
-<template lang="pug">
+<template lang="pug" >
     #app
+        
         .first
-            .menu
+            .dark("@click"="handleClick")
+                svg(viewBox="0 0 30 30" )
+                    ellipse.clip-dark( rx="15" ry="15" cx="15" cy="15" style="fill:#fff")
+            .menu   
                 .menu-item 
                     img(src="./assets/lsr.svg",style="transform:scale(0.6)")
                 .menu-item Contact
@@ -15,7 +19,7 @@
                     | army
                 div where design & development meet
                 .btn-container
-                    button("@click"="",style="border:2px #0c0c0c solid;background-color:#eee") Contact
+                    button(style="border:2px #0c0c0c solid;background-color:#eee") Contact
                     p 
                     button(style="background-color:#0c0c0c;color:#eee") Download CV
                 .social
@@ -86,7 +90,7 @@
                                 img(src="./assets/Frontend/Home.jpg")
                         Item#item-3(
                             
-                            data-aos-delay="250",
+                            data-aos-delay="150",
                             title="Full-Stack solution",
                             tag1="Full",
                             tag2="Stack",
@@ -137,7 +141,7 @@
                                 img(src="./assets/Backend/cart.png",style="background-color:var(--yellow)") 
                         Item#item-9(
                             
-                            data-aos-delay="250",
+                            data-aos-delay="150",
                             title="Visual branding",
                             tag1="Art",
                             tag2="Dir.",
@@ -146,7 +150,7 @@
                                 img(src="./assets/3d.General/2.jpg")                           
                         Item#item-10(
 
-                            data-aos-delay="100",
+                            data-aos-delay="130",
                             title="Design exploration",
                             tag1="Art",
                             tag2="Dir.",
@@ -154,7 +158,7 @@
                             text=" Mix of design techniques exploration on Dribble")
                                 video(src="./dist/pcGuy.webm" autoplay loop)
                         Item#item-11(
-                            data-aos-delay="250",
+                            data-aos-delay="150",
                             tag1="Art",
                             tag2="Dir.",
                             title="Landing Page",
@@ -210,28 +214,111 @@
                     
                 Canvas(":x"="x",":y"="y",style="grid-row:3;grid-column:2;align-self:end")
                 Contact(@onSubmit="handleForm")
-               
-        
-        
 
 </template>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <style>
+@keyframes foo{
+    50%{
+    transform:
+        scale(1.03)
+    };
+}
+#fu{
+    transform-box: fill-box;
+    transform-origin: 50% 50%;
+    animation: foo infinite .6s ease-in-out;
+    
+}
+.v-enter-active,
+.v-leave-active {
+    transition: all .5s;
+}
+.v-leave-to,
+.v-enter {
+    transform:translateY(-100vh);
+}
+
+.loading{
+    z-index:10;
+    position:absolute;
+    width:100vw;
+    height:100vh;
+    left:0px;
+    right:0px;
+    background-color:#eee;
+    margin:auto;
+    padding-top:25vh;
+    padding-bottom:25vh;
+    text-align:center;    
+}
+.loading > video {
+    width:25vh; 
+}
+
+
+
+.cat-bg{
+    font-size: 490px;
+    line-height: 84%;
+    font-family: 'Abril Fatface',serif;
+    z-index: -1;
+    color: #eee;
+    top:0px;
+    text-align: center;
+    position: absolute;
+    align-self: center;
+    justify-self:center;
+}
+.dark{
+    position:absolute;
+    right: 15vw;
+    top: 10vh;
+    height: 30px;
+    border-radius: 50%;
+    width: 30px;
+    background-color: red;
+    transition: all .2s;
+}
+
+
+.clip-dark{
+    transform: translateX(-10px);
+}
+
+.container{
+    display: grid;
+    position: relative;
+    z-index: -3;
+    
+    padding: 0;
+    margin:auto;
+    height: 200vh;
+    justify-items: flex-end;   
+    width:80%; 
+    
+}
+:root{
+    --red:#FF78A8;
+    --redy:#FF78A8;
+    --orange:#fb7756;
+    --yellow:#00E8FF;
+    --yellow2:#faEa60;
+    --green:#C5F95a;
+    --blue:#3C76C3;
+}
+
+
+
+
+body{
+    display: grid;    
+    font-family:sans-serif;
+    color: var(--color);
+    background-color: var(--bg);
+}
+
 #app{
     position: absolute;
-
     z-index:0;
     display:grid;
 
@@ -304,7 +391,7 @@
 .footer{
     display:grid;
     grid-template-columns: repeat(4,1fr);
-    background: #272727;
+    background: #273737;
     grid-gap:10px;
     height: 70vh;
     padding-top: 50px;
@@ -344,7 +431,13 @@ ol li{
     margin-left:30px;
 }
 
-
+#svgBG{
+    fill:var(--yellow);
+    right:0;
+    position:absolute;
+    top:0;
+    z-index:-7
+}
 
 ol li::before{
     content: "0" counter(my-counter);
@@ -377,10 +470,6 @@ video{
 .gallery-container > a > img{
     max-width: 100%;
 }
-#item-1{
-    /* grid-column: span 2; */
-}
-
 
 #item-3{
     grid-column: span 2;
@@ -715,10 +804,13 @@ export default {
     },
     created(){
         AOS.init();
-    },   
+    },      
     methods:{
         handleForm(data){
             this.message = data
+        },
+        handleClick(){
+            this.$emit('onDark')
         },
         coordinates(e){
            this.x = (e.clientX - window.innerWidth/2)/window.innerWidth;
