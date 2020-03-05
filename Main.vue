@@ -1,9 +1,13 @@
-<template lang="pug">
+<template lang="pug" >
     #app
         .first
-            .menu
+            .dark("@click"="handleClick")
+                svg(viewBox="0 0 30 30" )
+                    ellipse.clip-dark( rx="15" ry="15" cx="15" cy="15" )
+            .menu   
                 .menu-item 
-                    img(src="./assets/lsr.svg",style="transform:scale(0.6)")
+                    svg(viewBox="0 0 113 47",style="fill:var(--light,#000)")
+                        <path d="M156.61,91.08a.75.75,0,0,0,0-.21,13.32,13.32,0,0,0-3.86-9.33,13.1,13.1,0,0,0-9.08-3.86H74.78a13.25,13.25,0,0,0-9.31,3.85,13.09,13.09,0,0,0-3.85,9v.29a13.19,13.19,0,0,0,13,12.83h30.45A6.37,6.37,0,0,1,111.4,110v.85a6.37,6.37,0,0,1-6.34,6.37H56.81a6.38,6.38,0,0,1-6.34-6.38V80.93a.92.92,0,0,0,0-.29,3.44,3.44,0,0,0-6.83.49V111a.75.75,0,0,0,0,.21,13.15,13.15,0,0,0,13,12.85h48.54A13.16,13.16,0,0,0,118.27,111v-1.1a13.18,13.18,0,0,0-13.16-13H74.87a6.23,6.23,0,1,1,0-12.45h0a1.15,1.15,0,0,0,.41.08h68.17a6.31,6.31,0,0,1,6.34,6v0a6.35,6.35,0,0,1-6.26,6.32l-.17,0H127a3.4,3.4,0,0,0-2.43,1,3.48,3.48,0,0,0-1,2.44,3.43,3.43,0,0,0,3.46,3.4h.39a19.23,19.23,0,0,1,19.14,17.51A3.4,3.4,0,0,0,150,124.4h.31a3.48,3.48,0,0,0,2.35-1.22,3.53,3.53,0,0,0,.78-2.51,26.11,26.11,0,0,0-8.34-16.87l-.11-.1a13.33,13.33,0,0,0,7.82-3.77A13.15,13.15,0,0,0,156.61,91.08Z" transform="translate(-43.6 -77.67)"/>
                 .menu-item Contact
                 .menu-item Services
                 .menu-item About
@@ -11,13 +15,13 @@
                 div designer & developer 
                 div 
                     span One 
-                    span(style="color:var(--red)") man 
+                    span(style="color:var(--bg,var(--red))") man 
                     | army
                 div where design & development meet
                 .btn-container
                     button(style="border:2px #0c0c0c solid;background-color:#eee") Contact
-                    p
-                    button(@click="download",style="background-color:#0c0c0c;color:#eee") Download CV
+                    p 
+                    button(style="background-color:#0c0c0c;color:#eee") Download CV
                 .social
                     a.social-item(href="https://github.com/lsroa") 
                         <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
@@ -86,7 +90,7 @@
                                 img(src="./assets/Frontend/Home.jpg")
                         Item#item-3(
                             
-                            data-aos-delay="250",
+                            data-aos-delay="150",
                             title="Full-Stack solution",
                             tag1="Full",
                             tag2="Stack",
@@ -137,7 +141,7 @@
                                 img(src="./assets/Backend/cart.png",style="background-color:var(--yellow)") 
                         Item#item-9(
                             
-                            data-aos-delay="250",
+                            data-aos-delay="150",
                             title="Visual branding",
                             tag1="Art",
                             tag2="Dir.",
@@ -146,7 +150,7 @@
                                 img(src="./assets/3d.General/2.jpg")                           
                         Item#item-10(
 
-                            data-aos-delay="100",
+                            data-aos-delay="130",
                             title="Design exploration",
                             tag1="Art",
                             tag2="Dir.",
@@ -154,7 +158,7 @@
                             text=" Mix of design techniques exploration on Dribble")
                                 video(src="./dist/pcGuy.webm" autoplay loop)
                         Item#item-11(
-                            data-aos-delay="250",
+                            data-aos-delay="150",
                             tag1="Art",
                             tag2="Dir.",
                             title="Landing Page",
@@ -220,23 +224,113 @@
         
 
 </template>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <style>
+@keyframes foo{
+    50%{
+    transform:
+        scale(1.03)
+    };
+}
+#fu{
+    transform-box: fill-box;
+    transform-origin: 50% 50%;
+    animation: foo infinite .6s ease-in-out;
+    
+}
+.v-enter-active,
+.v-leave-active {
+    transition: all .5s;
+}
+.v-leave-to,
+.v-enter {
+    transform:translateY(-100vh);
+}
+
+.loading{
+    z-index:10;
+    position:absolute;
+    width:100vw;
+    height:100vh;
+    left:0px;
+    right:0px;
+    background-color:#eee;
+    margin:auto;
+    padding-top:25vh;
+    padding-bottom:25vh;
+    text-align:center;    
+}
+.loading > video {
+    width:25vh; 
+}
+
+
+
+.cat-bg{
+    font-size: 490px;
+    line-height: 84%;
+    font-family: 'Abril Fatface',serif;
+    z-index: -1;
+    color: var(--darker,#eee);
+    top:0px;
+    text-align: center;
+    position: absolute;
+    align-self: center;
+    justify-self:center;
+}
+.dark{
+    position:absolute;
+    right: 15vw;
+    top: 10vh;
+    height: 30px;
+    border-radius: 50%;
+    width: 30px;
+    background-color: #eee;
+    transition: all .2s;
+}
+
+
+.clip-dark{
+    transform: var(--move,translateX(-10px));
+    fill: var(--bg,#fff);
+    transition:  fill .2s;
+    transition: transform .5s ease;
+}
+
+.container{
+    display: grid;
+    position: relative;
+    z-index: -3;
+    
+    padding: 0;
+    margin:auto;
+    height: 200vh;
+    justify-items: flex-end;   
+    width:80%; 
+    
+}
+:root{
+    --red:#FF78A8;
+    --redy:#FF78A8;
+    --orange:#fb7756;
+    --yellow:#00E8FF;
+    --yellow2:#faEa60;
+    --green:#C5F95a;
+    --blue:#3C76C3;
+    
+}
+
+
+
+
+body{
+    display: grid;    
+    font-family:sans-serif;
+    transition: background-color .5s  ease;
+}
+
+
 #app{
     position: absolute;
-
     z-index:0;
     display:grid;
 
@@ -252,8 +346,8 @@
     width:100%;
 }
 
-.menu-item > img{
-    width:10vh;
+.menu-item > svg{
+    width:8vh;
 }
 
 .foo-title{
@@ -310,9 +404,10 @@
 
 .footer{
     display:grid;
-    grid-template-columns: 1fr 1fr 2fr 1fr;
-    background: #272727;
-    grid-gap:20px;
+    grid-template-columns: repeat(4,1fr);
+    background: #273737;
+    grid-gap:10px;
+    height: 70vh;
     padding-top: 50px;
     color: #8b8b8b;
     justify-content:center;
@@ -350,7 +445,13 @@ ol li{
     margin-left:30px;
 }
 
-
+#svgBG{
+    fill:var(--yellow);
+    right:0;
+    position:absolute;
+    top:0;
+    z-index:-7
+}
 
 ol li::before{
     content: "0" counter(my-counter);
@@ -383,10 +484,6 @@ video{
 .gallery-container > a > img{
     max-width: 100%;
 }
-#item-1{
-    /* grid-column: span 2; */
-}
-
 
 #item-3{
     grid-column: span 2;
@@ -476,6 +573,7 @@ button{
     display: grid;
     grid-auto-flow: column;
     justify-items: center;
+    margin-top: 2vh;
 }
 
 .social-item{   
@@ -585,7 +683,9 @@ button{
     }
     .footer{
         display:grid;
-        height: 80vh;
+        min-height: 80vh;
+        padding-bottom: 20px;
+        padding-top: 0px;
         align-items: center;
         justify-items:center;
         grid-template-columns: 1fr;
@@ -721,7 +821,7 @@ export default {
     },
     created(){
         AOS.init();
-    },   
+    },      
     methods:{
         download(){
             fetch("./assets/bg.jpg",{
@@ -731,6 +831,9 @@ export default {
             }).catch( error => {
                 console.log(error)
             })
+        },
+        handleClick(){
+            this.$emit('onDark')
         },
         coordinates(e){
            this.x = (e.clientX - window.innerWidth/2)/window.innerWidth;

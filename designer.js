@@ -11,7 +11,6 @@ import {
 } from "postprocessing";
 
 import GLTFLoader from "three-gltf-loader";
-import { RectAreaLight } from "three";
 
 
 let mesh, scene, camera, renderer, aoPass, ssaoEffect, normalPass, loader, renderPass, composer, clock, mixerUpdateDelta;
@@ -20,7 +19,7 @@ let mixers = [];
 
 export default function init(vue) {
   scene = new THREE.Scene();
-
+  document.scene = scene;
   camera = new THREE.PerspectiveCamera(
     10,
     (window.innerWidth / 2) / window.innerHeight,
@@ -124,7 +123,9 @@ const addLights = () => {
   ambientLight.position.set(0, 0, 0);
   scene.add(ambientLight);
 
-
+  let pointLight2 = new THREE.PointLight(0xEEEEEFF, 0)
+  pointLight2.position.set(0, 3, -2);
+  scene.add(pointLight2)
 
 
   let dirLight = new THREE.DirectionalLight(0xFFFFFF, 0.4);
@@ -132,13 +133,14 @@ const addLights = () => {
   dirLight.lookAt(0, 0, 0);
   scene.add(dirLight);
 
-  // let helper1 = new THREE.DirectionalLightHelper(dirLight, 1, 0x00FF00);
-  // scene.add(helper1);
 
   let dirLight1 = new THREE.DirectionalLight(0xFFFFFF, 0.2);
   dirLight.position.set(8, 20, -100);
   dirLight1.lookAt(0, 0, 0);
   scene.add(dirLight1);
+
+  // let helper1 = new THREE.SpotLightHelper(pointLight2, 1);
+  // scene.add(helper1);
 };
 
 const animate = () => {
