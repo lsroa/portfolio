@@ -650,12 +650,15 @@ button{
     .menu{
         justify-self: center;
     }
+    .foo-title > p:nth-child(6){
+        display:none
+    }
     .foo-title > p:nth-child(1){
         grid-column:1;
-        font-size: 35px;
+        font-size: 30px;
         align-self:center;
         text-align:center;
-        margin:25px;
+        margin-bottom:25px;
     }
     .social{
         margin-top:25px
@@ -681,15 +684,23 @@ button{
     .foo-title > p:nth-child(2){
         display:none;
     }
+    .foo-title{
+        grid-column: 1;
+        padding:20px;
+        height:auto;
+        text-align:center;
+        justify-items: center;
+        justify-content: center;
+    }
     .footer{
         display:grid;
-        min-height: 80vh;
         padding-bottom: 20px;
         padding-top: 0px;
         align-items: center;
         justify-items:center;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        height:auto;
+        /* grid-template-rows: 1fr 1fr 1fr; */
     }
     
     .contact{
@@ -763,6 +774,7 @@ button{
         grid-row:3;
         grid-template-columns: repeat(4,1fr);
         padding-right:0px;
+        margin-top:20px;
         align-content:center;
     }
     .title{
