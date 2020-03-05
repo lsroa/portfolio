@@ -1,13 +1,13 @@
 <template lang="pug" >
     #app
-        
         .first
             .dark("@click"="handleClick")
                 svg(viewBox="0 0 30 30" )
-                    ellipse.clip-dark( rx="15" ry="15" cx="15" cy="15" style="fill:#fff")
+                    ellipse.clip-dark( rx="15" ry="15" cx="15" cy="15" )
             .menu   
                 .menu-item 
-                    img(src="./assets/lsr.svg",style="transform:scale(0.6)")
+                    svg(viewBox="0 0 113 47",style="fill:var(--light,#000)")
+                        <path d="M156.61,91.08a.75.75,0,0,0,0-.21,13.32,13.32,0,0,0-3.86-9.33,13.1,13.1,0,0,0-9.08-3.86H74.78a13.25,13.25,0,0,0-9.31,3.85,13.09,13.09,0,0,0-3.85,9v.29a13.19,13.19,0,0,0,13,12.83h30.45A6.37,6.37,0,0,1,111.4,110v.85a6.37,6.37,0,0,1-6.34,6.37H56.81a6.38,6.38,0,0,1-6.34-6.38V80.93a.92.92,0,0,0,0-.29,3.44,3.44,0,0,0-6.83.49V111a.75.75,0,0,0,0,.21,13.15,13.15,0,0,0,13,12.85h48.54A13.16,13.16,0,0,0,118.27,111v-1.1a13.18,13.18,0,0,0-13.16-13H74.87a6.23,6.23,0,1,1,0-12.45h0a1.15,1.15,0,0,0,.41.08h68.17a6.31,6.31,0,0,1,6.34,6v0a6.35,6.35,0,0,1-6.26,6.32l-.17,0H127a3.4,3.4,0,0,0-2.43,1,3.48,3.48,0,0,0-1,2.44,3.43,3.43,0,0,0,3.46,3.4h.39a19.23,19.23,0,0,1,19.14,17.51A3.4,3.4,0,0,0,150,124.4h.31a3.48,3.48,0,0,0,2.35-1.22,3.53,3.53,0,0,0,.78-2.51,26.11,26.11,0,0,0-8.34-16.87l-.11-.1a13.33,13.33,0,0,0,7.82-3.77A13.15,13.15,0,0,0,156.61,91.08Z" transform="translate(-43.6 -77.67)"/>
                 .menu-item Contact
                 .menu-item Services
                 .menu-item About
@@ -15,7 +15,7 @@
                 div designer & developer 
                 div 
                     span One 
-                    span(style="color:var(--red)") man 
+                    span(style="color:var(--bg,var(--red))") man 
                     | army
                 div where design & development meet
                 .btn-container
@@ -262,7 +262,7 @@
     line-height: 84%;
     font-family: 'Abril Fatface',serif;
     z-index: -1;
-    color: #eee;
+    color: var(--darker,#eee);
     top:0px;
     text-align: center;
     position: absolute;
@@ -276,13 +276,16 @@
     height: 30px;
     border-radius: 50%;
     width: 30px;
-    background-color: red;
+    background-color: #eee;
     transition: all .2s;
 }
 
 
 .clip-dark{
-    transform: translateX(-10px);
+    transform: var(--move,translateX(-10px));
+    fill: var(--bg,#fff);
+    transition:  fill .2s;
+    transition: transform .5s ease;
 }
 
 .container{
@@ -305,6 +308,7 @@
     --yellow2:#faEa60;
     --green:#C5F95a;
     --blue:#3C76C3;
+    
 }
 
 
@@ -313,9 +317,9 @@
 body{
     display: grid;    
     font-family:sans-serif;
-    color: var(--color);
-    background-color: var(--bg);
+    transition: background-color .5s  ease;
 }
+
 
 #app{
     position: absolute;
@@ -334,8 +338,8 @@ body{
     width:100%;
 }
 
-.menu-item > img{
-    width:10vh;
+.menu-item > svg{
+    width:8vh;
 }
 
 .foo-title{
@@ -559,6 +563,7 @@ button{
     display: grid;
     grid-auto-flow: column;
     justify-items: center;
+    margin-top: 2vh;
 }
 
 .social-item{   
@@ -668,7 +673,9 @@ button{
     }
     .footer{
         display:grid;
-        height: 80vh;
+        min-height: 80vh;
+        padding-bottom: 20px;
+        padding-top: 0px;
         align-items: center;
         justify-items:center;
         grid-template-columns: 1fr;

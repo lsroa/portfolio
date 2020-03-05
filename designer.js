@@ -11,7 +11,6 @@ import {
 } from "postprocessing";
 
 import GLTFLoader from "three-gltf-loader";
-import { RectAreaLight, PointLight, Vector3 } from "three";
 
 
 let mesh, scene, camera, renderer, aoPass, ssaoEffect, normalPass, loader, renderPass, composer, clock, mixerUpdateDelta;
@@ -124,7 +123,7 @@ const addLights = () => {
   ambientLight.position.set(0, 0, 0);
   scene.add(ambientLight);
 
-  let pointLight2 = new THREE.PointLight(0xFFFFFF, 0)
+  let pointLight2 = new THREE.PointLight(0xEEEEEFF, 0)
   pointLight2.position.set(0, 3, -2);
   scene.add(pointLight2)
 

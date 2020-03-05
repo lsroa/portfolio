@@ -1,5 +1,5 @@
 <template lang="pug">
-    div
+    div(:dark-mode="dark")
         transition
             div.loading(v-if="loading")
                 video(src="./dist/ast.webm" autoplay loop)
@@ -37,33 +37,22 @@ export default {
             this.loading = false
         }
     },
-    computed:{
-        cssVars(){
-            if(this.dark){
-                return`--bg:#273737;`
-            }
-            return`--bg:#efefef`
-        }
-    },
     methods:{
         toggleDark(){
             this.dark = !this.dark;
+            
+            document.body.style.color = this.dark ? "#aaa":"black";
             document.body.style.backgroundColor = !this.dark ? "#FFF":"#172727";
+
             document.scene.children[0].intensity = this.dark ?  0:1.2;
-            document.body.style.color = this.dark ? "#eee":"black";
-            document.querySelector(".cat-bg").style.color = this.dark ? "#273737":"#eee";
-            document.querySelector("#svgBG").style.fill = !this.dark ? "var(--yellow)":"#273737";
-            document.scene.children[1].intensity = this.dark ?  0:0.85;
+            document.scene.children[1].intensity = this.dark ?  0.1:0.85;
             document.scene.children[2].intensity = this.dark ?  0.8:0;
             document.scene.children[3].intensity = this.dark ?  0:0.4;
             document.scene.children[4].intensity = this.dark ?  0:0.2;
-
-
-
         }
     }, 
     mounted(){
-
+        
         if (!isMobile()){
             init(this) 
         }
@@ -74,3 +63,14 @@ export default {
 
 
 </script>
+<style>
+[dark-mode="true"]{
+    --bg: #172727;
+    --light: #eee;
+    --darker: #273737;
+    --yellow: var(--darker);
+    --red: var(--darker);
+    --move: translateX(-50px);
+
+}
+</style>
