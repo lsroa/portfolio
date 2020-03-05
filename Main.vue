@@ -404,7 +404,7 @@ body{
 
 .footer{
     display:grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: 1fr 1fr 2fr 1fr;
     background: #273737;
     grid-gap:10px;
     height: 70vh;
