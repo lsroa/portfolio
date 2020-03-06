@@ -394,7 +394,7 @@ body{
 .first{
     display:grid;
     width: 100%;
-    height: 90vh;
+    min-height: 80vh;
     justify-items: center;
     align-content:center;
     grid-gap:20px;
@@ -405,7 +405,7 @@ body{
 .second{
     display:grid;
     grid-column-start:2;
-    height:100vh;
+    min-height:100vh;
     width:100%;
     justify-items:center;
     grid-gap:10px;
