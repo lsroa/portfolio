@@ -52,9 +52,10 @@ A simple web scrapper that scrapp data from different sites
 * Case study of the grahics used in this project
 
 # **Advance Web Scrapper**
-Development | Designing | Technologies
-------------| ----------| -----------
-Laravel | fu | sniglarof 
+Development | verion 
+------------| ----------|
+Ruby on Rails | 4.3  
+React | 11.3
 
 ## Scope
 A simple web scrapper that scrapp data from different sites
@@ -62,9 +63,11 @@ A simple web scrapper that scrapp data from different sites
 ## What did I learn
 * PHP OOP 
 * Web scrapper techniques and patterns
+* Lazy load with react
+* Build, design and mantein an API
+* Consume an API with react   
 
 ## Reference
-* Case study of the grahics used in this project
 * [Web App](https://www.venezuelahoy.com)
 
 

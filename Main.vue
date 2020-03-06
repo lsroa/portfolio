@@ -42,8 +42,8 @@
 
         .second(data-aos="fade-up",data-aos-delay="220")
                 strong(style="font-family: 'Abril Fatface';font-size:48px") What do 
-                    span(style="color:var(--yellow)") I solve
-                div I am Madrid Spain based digital artist, a mix of developer and designer 
+                    span(style="color:var(--light,var(--yellow))") I solve
+                div I am Madrid Spain based digital artist, a mix of developer and designer who likes to solve digital problems no matter if it needs a fullstack solution or 
                 ol.service
                     li
                         strong  Digital experiences 
@@ -75,17 +75,17 @@
                 .cat-content
                     p.subt 
                         | My
-                        strong STUFFFF
+                        strong(style="color: var(--light,#000)") STUFFFF
                     .gallery-container
                         Item#item-1(
                             
-                            data-aos-delay="250",
+                            data-aos-delay="150",
                             title="IOS & Android App",
                             tag1="Front",
                             tag2="-end",
                             text="strong UI/UX & Full Stack Development"
                         )
-                            img(src="./assets/Frontend/ed.png",style="align-self:center;background: var(--yellow2)")
+                            img(src="./assets/Frontend/ed.png",style="background: var(--yellow2)")
                             img(src="./assets/Frontend/ed2.png",style="background: var(--yellow2)")
                         Item#item-2(
                             
@@ -98,7 +98,7 @@
                                 img(src="./assets/Frontend/Home.jpg")
                         Item#item-3(
                             
-                            data-aos-delay="150",
+                            data-aos-delay="130",
                             title="Full-Stack solution",
                             tag1="Full",
                             tag2="Stack",
@@ -107,7 +107,7 @@
                                 img(src="./assets/Illustration/5.jpeg")
                         Item#item-4(
                             
-                            data-aos-delay="100",
+                            data-aos-delay="250",
                             title="Advance Scrapper",
                             tag1="Back",
                             tag2="-end",
@@ -115,7 +115,7 @@
                                 img(src="./assets/3d.General/3.jpg")
                         Item#item-5(
                             
-                            data-aos-delay="50",
+                            data-aos-delay="150",
                             title="Landing Page",
                             tag1="UI",
                             tag2="UX",
@@ -124,7 +124,7 @@
                                 img(src="./assets/Illustration/2.jpeg")
                         Item#item-6(
                             
-                            data-aos-delay="350",
+                            data-aos-delay="180",
                             title=" Page",
                             tag1="UI",
                             tag2="UX",
@@ -132,7 +132,7 @@
                                 img(src="./assets/Frontend/shop.jpg")
                         Item#item-7(
                             
-                            data-aos-delay="100",
+                            data-aos-delay="200",
                             title="Landing Page",
                             tag1="Gra",
                             tag2="phic",
@@ -145,11 +145,11 @@
                             tag1="Front",
                             link="https://codepen.io/lsroa",
                             tag2="-end",
-                            text=" Web Design for a local restaurant")
+                            text="Made with react hooks + redux and another with vue + vuex")
                                 img(src="./assets/Backend/cart.png",style="background-color:var(--yellow)") 
                         Item#item-9(
                             
-                            data-aos-delay="150",
+                            data-aos-delay="130",
                             title="Visual branding",
                             tag1="Art",
                             tag2="Dir.",
@@ -158,7 +158,7 @@
                                 img(src="./assets/3d.General/2.jpg")                           
                         Item#item-10(
 
-                            data-aos-delay="130",
+                            data-aos-delay="150",
                             title="Design exploration",
                             tag1="Art",
                             tag2="Dir.",
@@ -166,7 +166,7 @@
                             text=" Mix of design techniques exploration on Dribble")
                                 video(src="./dist/pcGuy.webm" autoplay loop)
                         Item#item-11(
-                            data-aos-delay="150",
+                            data-aos-delay="120",
                             tag1="Art",
                             tag2="Dir.",
                             title="Landing Page",
@@ -496,17 +496,19 @@ video{
 .gallery-container > a > img{
     max-width: 100%;
 }
-
+#item-1{
+     display:grid;
+     grid-template-columns: 1fr 1fr;
+     grid-gap: 0px;
+     grid-column: span 2;
+}
 #item-3{
     grid-column: span 2;
 }
 #item-5{
     grid-column: span 2;
 }
-#item-10{
-    grid-column: -2;
-    grid-row: 2;
-}
+
 
 .subt::before{
     content:"";
@@ -532,6 +534,7 @@ video{
 
 .gallery-container{
     display:grid;
+    grid-auto-flow: dense;
     grid-gap:80px;
     padding-bottom:20vh;
     width:100%;
@@ -596,7 +599,11 @@ button{
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 1px solid black;
+    border: 1px solid var(--light,black);
+}
+
+.social-item > svg {
+    fill: var(--light,#000);
 }
 #canvas{
     padding:0;
