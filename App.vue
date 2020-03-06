@@ -71,6 +71,8 @@ export default {
     --yellow: var(--darker);
     --red: var(--darker);
     --move: translateX(-50px);
+    --hide: 0;
+    --scale: 1;
 
 }
 </style>

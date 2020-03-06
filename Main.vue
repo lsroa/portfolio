@@ -2,8 +2,16 @@
     #app
         .first
             .dark("@click"="handleClick")
-                svg(viewBox="0 0 30 30" )
+                svg(viewBox="0 0 30 30" style="width: var(--hide,auto);background:#ccc;transition: width .5s")
+                    defs
+                        clipPath#clip
+                            ellipse( rx="15" ry="15" cx="15" cy="15" style="fill: red")
                     ellipse.clip-dark( rx="15" ry="15" cx="15" cy="15" )
+                <svg width="30px" height="30px" viewBox="0 0 48 48" version="1.1" style="transform:scale(var(--scale,0));transition: transform .2s">
+                    <path d="M25.0137 0L22.0137 0L22.0137 9L25.0137 9L25.0137 0ZM14.3164 12.1843L12.1951 14.3056L5.83112 7.94168L7.95244 5.82036L14.3164 12.1843ZM41.2014 7.95189L39.0801 5.83057L32.7161 12.1945L34.8374 14.3158L41.2014 7.95189ZM23.5137 16C19.9238 16 17.0137 18.9101 17.0137 22.5C17.0137 26.0899 19.9238 29 23.5137 29C27.1035 29 30.0137 26.0899 30.0137 22.5C30.0137 18.9101 27.1035 16 23.5137 16ZM47.0039 24.9974L47.0039 21.9974L38.0039 21.9974L38.0039 24.9974L47.0039 24.9974ZM9 22.0018L9 25.0018L-2.86102e-06 25.0018L-2.86102e-06 22.0018L9 22.0018ZM39.0711 41.1753L41.1924 39.054L34.8284 32.69L32.7071 34.8113L39.0711 41.1753ZM12.21 32.7007L14.3313 34.822L7.96732 41.186L5.846 39.0646L12.21 32.7007ZM25.0137 38L25.0137 47L22.0137 47L22.0137 38L25.0137 38Z" id="Ellipse-Union" fill="var(--light)"  stroke="none" />
+                </svg>
+
+
             .menu   
                 .menu-item 
                     svg(viewBox="0 0 113 47",style="fill:var(--light,#000)")
@@ -15,7 +23,7 @@
                 div designer & developer 
                 div 
                     span One 
-                    span(style="color:var(--bg,var(--red))") man 
+                    span(style="color:var(--light,var(--red))") man 
                     | army
                 div where design & development meet
                 .btn-container
@@ -170,11 +178,12 @@
                 Canvas(":x"="x",":y"="y",style="grid-row: 1;grid-column:2;align-self:end")
                 .foo-title
                     p(style="font-family: 'Abril Fatface'") Lets build something cool !
-                    strong(style="margin:2px") roa234@gmail.com
-                    p(style="margin:2px")
-                        | +34 
-                        strong 603265501
-                    p(style="margin:2px") Madrid, Spain 28048
+                    a(href="mailto:") 
+                        strong(style="margin:2px") roa234@gmail.com
+                    p(style="margin:2px;") +34 603265501
+                    p(style="margin:2px") Madrid, 
+                        strong Spain 
+                        | 28048
                     .social-2 
                         a.social-item(href="https://github.com/lsroa") 
                             <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
@@ -225,6 +234,7 @@
 
 </template>
 <style>
+
 @keyframes foo{
     50%{
     transform:
@@ -277,24 +287,27 @@
     align-self: center;
     justify-self:center;
 }
+
+
+
 .dark{
     position:absolute;
     right: 15vw;
-    top: 10vh;
+    top: 8vh;
     height: 30px;
-    border-radius: 50%;
     width: 30px;
-    background-color: #eee;
-    transition: all .2s;
+    clip-path: url(#clip);
+    /* background-color: blue; */
 }
 
 
 .clip-dark{
-    transform: var(--move,translateX(-10px));
+    transform: var(--move,translateX(-11px));
     fill: var(--bg,#fff);
     transition:  fill .2s;
-    transition: transform .5s ease;
+    transition: transform .5s;
 }
+
 
 .container{
     display: grid;
@@ -325,7 +338,7 @@
 body{
     display: grid;    
     font-family:sans-serif;
-    transition: background-color .5s  ease;
+    transition: background-color .2s  ease;
 }
 
 
@@ -364,7 +377,7 @@ body{
 
 .social-2{
     display:flex;
-    grid-column:3;
+    margin-top: 20px;
     justify-content:space-around;
     justify-items: center;
 }
@@ -407,7 +420,6 @@ body{
     grid-template-columns: 1fr 1fr 2fr 1fr;
     background: #273737;
     grid-gap:10px;
-    height: 70vh;
     padding-top: 50px;
     color: #8b8b8b;
     justify-content:center;
@@ -645,7 +657,10 @@ button{
         grid-column: auto;
         grid-row: auto;
     }
-
+    .dark{
+        top: 4.2vh;
+        /* fill: #aaa; */
+    }
 
     .menu{
         justify-self: center;
@@ -699,8 +714,6 @@ button{
         align-items: center;
         justify-items:center;
         grid-template-columns: 1fr;
-        height:auto;
-        /* grid-template-rows: 1fr 1fr 1fr; */
     }
     
     .contact{
