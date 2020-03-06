@@ -16,9 +16,9 @@
                 .menu-item 
                     svg(viewBox="0 0 113 47",style="fill:var(--light,#000)")
                         <path d="M156.61,91.08a.75.75,0,0,0,0-.21,13.32,13.32,0,0,0-3.86-9.33,13.1,13.1,0,0,0-9.08-3.86H74.78a13.25,13.25,0,0,0-9.31,3.85,13.09,13.09,0,0,0-3.85,9v.29a13.19,13.19,0,0,0,13,12.83h30.45A6.37,6.37,0,0,1,111.4,110v.85a6.37,6.37,0,0,1-6.34,6.37H56.81a6.38,6.38,0,0,1-6.34-6.38V80.93a.92.92,0,0,0,0-.29,3.44,3.44,0,0,0-6.83.49V111a.75.75,0,0,0,0,.21,13.15,13.15,0,0,0,13,12.85h48.54A13.16,13.16,0,0,0,118.27,111v-1.1a13.18,13.18,0,0,0-13.16-13H74.87a6.23,6.23,0,1,1,0-12.45h0a1.15,1.15,0,0,0,.41.08h68.17a6.31,6.31,0,0,1,6.34,6v0a6.35,6.35,0,0,1-6.26,6.32l-.17,0H127a3.4,3.4,0,0,0-2.43,1,3.48,3.48,0,0,0-1,2.44,3.43,3.43,0,0,0,3.46,3.4h.39a19.23,19.23,0,0,1,19.14,17.51A3.4,3.4,0,0,0,150,124.4h.31a3.48,3.48,0,0,0,2.35-1.22,3.53,3.53,0,0,0,.78-2.51,26.11,26.11,0,0,0-8.34-16.87l-.11-.1a13.33,13.33,0,0,0,7.82-3.77A13.15,13.15,0,0,0,156.61,91.08Z" transform="translate(-43.6 -77.67)"/>
-                .menu-item Contact
-                .menu-item Services
-                .menu-item About
+                a.menu-item(href="#contact") Contact
+                a.menu-item(href="#second") Services
+                a.menu-item(href="#second") About
             .title 
                 div designer & developer 
                 div 
@@ -40,10 +40,10 @@
                     a.social-item(href="https://dribbble.com/lsroa")
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.628 0-12 5.373-12 12s5.372 12 12 12 12-5.373 12-12-5.372-12-12-12zm9.885 11.441c-2.575-.422-4.943-.445-7.103-.073-.244-.563-.497-1.125-.767-1.68 2.31-1 4.165-2.358 5.548-4.082 1.35 1.594 2.197 3.619 2.322 5.835zm-3.842-7.282c-1.205 1.554-2.868 2.783-4.986 3.68-1.016-1.861-2.178-3.676-3.488-5.438.779-.197 1.591-.314 2.431-.314 2.275 0 4.368.779 6.043 2.072zm-10.516-.993c1.331 1.742 2.511 3.538 3.537 5.381-2.43.715-5.331 1.082-8.684 1.105.692-2.835 2.601-5.193 5.147-6.486zm-5.44 8.834l.013-.256c3.849-.005 7.169-.448 9.95-1.322.233.475.456.952.67 1.432-3.38 1.057-6.165 3.222-8.337 6.48-1.432-1.719-2.296-3.927-2.296-6.334zm3.829 7.81c1.969-3.088 4.482-5.098 7.598-6.027.928 2.42 1.609 4.91 2.043 7.46-3.349 1.291-6.953.666-9.641-1.433zm11.586.43c-.438-2.353-1.08-4.653-1.92-6.897 1.876-.265 3.94-.196 6.199.196-.437 2.786-2.028 5.192-4.279 6.701z"/></svg>
 
-        .second(data-aos="fade-up",data-aos-delay="220")
+        #second(data-aos="fade-up",data-aos-delay="220")
                 strong(style="font-family: 'Abril Fatface';font-size:48px") What do 
                     span(style="color:var(--light,var(--yellow))") I solve
-                div I am Madrid Spain based digital artist, a mix of developer and designer who likes to solve digital problems no matter if it needs a fullstack solution or 
+                div I am Madrid Spain based digital artist, a mix of developer and designer who likes to solve digital problems  
                 ol.service
                     li
                         strong  Digital experiences 
@@ -83,7 +83,7 @@
                             title="IOS & Android App",
                             tag1="Front",
                             tag2="-end",
-                            text="strong UI/UX & Full Stack Development"
+                            text="UI/UX & Full Stack mobile Development"
                         )
                             img(src="./assets/Frontend/ed.png",style="background: var(--yellow2)")
                             img(src="./assets/Frontend/ed2.png",style="background: var(--yellow2)")
@@ -93,7 +93,7 @@
                             title="Landing Page",
                             tag1="UI",
                             tag2="UX",
-                            text=" Web Design for a local restaurant"
+                            text="Web Design for a local restaurant"
                         )
                                 img(src="./assets/Frontend/Home.jpg")
                         Item#item-3(
@@ -103,7 +103,7 @@
                             tag1="Full",
                             tag2="Stack",
                             link="https://www.behance.net/gallery/71665101/Grupo-DTS"
-                            text="Shop app made with React Native")
+                            text="Full stack digital solution build with laravel and react")
                                 img(src="./assets/Illustration/5.jpeg")
                         Item#item-4(
                             
@@ -111,7 +111,7 @@
                             title="Advance Scrapper",
                             tag1="Back",
                             tag2="-end",
-                            text=" Web Design for a local restaurant")
+                            text="Php web scrapper made for news site")
                                 img(src="./assets/3d.General/3.jpg")
                         Item#item-5(
                             
@@ -120,7 +120,7 @@
                             tag1="UI",
                             tag2="UX",
                             link="https://www.behance.net/gallery/72776221/Prionato-UIUX"
-                            text=" Web Design for a local restaurant")
+                            text="Visual branding for Marketing agency")
                                 img(src="./assets/Illustration/2.jpeg")
                         Item#item-6(
                             
@@ -128,7 +128,7 @@
                             title=" Page",
                             tag1="UI",
                             tag2="UX",
-                            text=" Web Design for a local restaurant") 
+                            text=" Web Design prototype for E-commerce") 
                                 img(src="./assets/Frontend/shop.jpg")
                         Item#item-7(
                             
@@ -137,7 +137,7 @@
                             tag1="Gra",
                             tag2="phic",
                             link="https://www.behance.net/gallery/72558755/Astronout-2d3d"
-                            text=" Web Design for a local restaurant")
+                            text=" Visual exploration for illustration made with photoshop, Cinema 4d and substance painter")
                                 img(src="./assets/Illustration/1.jpg")
                         Item#item-8(
                             
@@ -145,7 +145,7 @@
                             tag1="Front",
                             link="https://codepen.io/lsroa",
                             tag2="-end",
-                            text="Made with react hooks + redux and another with vue + vuex")
+                            text="Made with react hooks + redux and vue + vuex")
                                 img(src="./assets/Backend/cart.png",style="background-color:var(--yellow)") 
                         Item#item-9(
                             
@@ -154,7 +154,7 @@
                             tag1="Art",
                             tag2="Dir.",
                             link="https://www.behance.net/gallery/72634421/Trading-Assets-for-BALDER-Group"
-                            text=" Web Design for a local restaurant")
+                            text="Prototype made for trading academy")
                                 img(src="./assets/3d.General/2.jpg")                           
                         Item#item-10(
 
@@ -169,8 +169,8 @@
                             data-aos-delay="120",
                             tag1="Art",
                             tag2="Dir.",
-                            title="Landing Page",
-                            text=" Web Design for a local restaurant")
+                            title="Reel 2017",
+                            text=" 2017 Demo reel of animations")
                                 video(src="./assets/ghost.webm" autoplay loop)
                             
 
@@ -178,7 +178,7 @@
                 Canvas(":x"="x",":y"="y",style="grid-row: 1;grid-column:2;align-self:end")
                 .foo-title
                     p(style="font-family: 'Abril Fatface'") Lets build something cool !
-                    a(href="mailto:") 
+                    a#contact(href="mailto:") 
                         strong(style="margin:2px") roa234@gmail.com
                     p(style="margin:2px;") +34 603265501
                     p(style="margin:2px") Madrid, 
@@ -402,7 +402,7 @@ body{
 
 }
 
-.second{
+#second{
     display:grid;
     grid-column-start:2;
     min-height:100vh;
@@ -771,7 +771,7 @@ button{
     .designer{
         display:none
     }
-    .second{
+    #second{
         grid-column: 1;
         width:80%;
 
