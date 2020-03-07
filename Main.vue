@@ -2,7 +2,7 @@
     #app
         .first
             .dark("@click"="handleClick")
-                svg(viewBox="0 0 30 30" style="width: var(--hide,auto);background:#ccc;transition: width .5s")
+                svg(viewBox="0 0 30 30" style="width: var(--hide,auto);background:#aaa;transition: width .5s")
                     defs
                         clipPath#clip
                             ellipse( rx="15" ry="15" cx="15" cy="15" style="fill: red")
@@ -43,7 +43,7 @@
         #second(data-aos="fade-up",data-aos-delay="220")
                 strong(style="font-family: 'Abril Fatface';font-size:48px") What do 
                     span(style="color:var(--light,var(--yellow))") I solve
-                div I am Madrid Spain based digital artist, a mix of developer and designer who likes to solve digital problems  
+                div I am Madrid Spain based digital artist, a mix of developer/designer who likes to solve digital problems constantly probing structures and systems to find ways to <strong>push things forward</strong>. I have expertise building complete full stack solutions with <strong>NodeJS</strong>, Laravel, Ruby on Rails, Flutter, <strong>React, Vue </strong> and SQL, while I design, prototype, test and experiment with <strong>Sketch</strong>, Adobe Suite, Cinema 4d and <strong>After Effects </strong>
                 ol.service
                     li
                         strong  Digital experiences 
@@ -255,6 +255,10 @@
 .v-leave-to,
 .v-enter {
     transform:translateY(-100vh);
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 .loading{

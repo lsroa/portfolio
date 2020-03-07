@@ -6,8 +6,8 @@
         svg(id="svgBG" viewBox="0 0 400 400")
             ellipse(id= "fu" cx="190",cy="100",rx="80",ry="80")
             rect(x="320",y="130",width="25",height="25",class="red-fill")
-            rect(x="0",y="230",width="80%",height="30%",class="red-fill")
-            rect(x="0",y="360",width="80%",height="10")
+            rect(x="0",y="240",width="80%",height="30%",class="red-fill")
+            rect(x="0",y="370",width="80%",height="10")
         Main(@onDark="toggleDark")
         .container
             #canvas         
